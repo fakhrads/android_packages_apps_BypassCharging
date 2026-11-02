@@ -29,6 +29,7 @@ import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.FooterPreference;
+import com.android.settingslib.widget.GroupSectionDividerMixin;
 import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.SelectorWithWidgetPreference;
 import com.android.settingslib.widget.SettingsBasePreferenceFragment;
@@ -70,7 +71,9 @@ public class SettingsFragment extends SettingsBasePreferenceFragment {
     private int mStatus = BatteryManager.BATTERY_STATUS_UNKNOWN;
     private int mBatteryTempTenths;
 
-    private class HeroPreference extends Preference {
+    // A section divider to the expressive adapter, so it keeps the card colors instead of
+    // painting its own round background over them
+    private class HeroPreference extends Preference implements GroupSectionDividerMixin {
         private TextView mTitleView;
         private TextView mSubtitleView;
         private TextView mBatteryView;
