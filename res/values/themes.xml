@@ -4,8 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Settings Expressive theme: system bars, clipping and colours come from the parent -->
-    <style name="Theme.BypassCharging" parent="Theme.SubSettingsBase.Expressive">
+    <!-- The page is Compose (ChargingTheme); this only sets the window, like LunarisDolby -->
+    <style name="Theme.BypassCharging" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation.BypassCharging</item>
     </style>
 

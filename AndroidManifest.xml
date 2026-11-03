@@ -54,6 +54,13 @@
             </intent-filter>
         </service>
 
+        <!-- ZeroEngine's charging page reads and changes the settings through this; it checks
+             the caller itself (system uid or this app's signature) -->
+        <provider
+            android:name=".ControlProvider"
+            android:authorities="dev.fakhrads.bypasscharging.control"
+            android:exported="true" />
+
         <!-- Turns bypass off after every boot, before the first unlock, and sets the fast charging
              limit again (the kernel forgets it on reboot) -->
         <receiver
