@@ -14,24 +14,30 @@ import android.util.Log;
 import lineageos.health.HealthInterface;
 import lineageos.providers.LineageSettings;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 /**
- * Turns bypass charging on and off through Lineage Health charging control (limit mode).
+ * Turns bypass charging on and off through the MCA charge interface (charge_enable).
  *
- * On onyx the Lineage Health HAL drives the MCA smart_chg node: when the framework disables
- * charging, the kernel stops charging the battery and the charger keeps powering the phone.
- * Two modes:
- * - smart: limit 80%, charging resumes 3% below (config_chargingControlBatteryRechargeMargin)
- * - bypass: limit at the battery level when it was turned on, so the battery holds that level;
- *   LineageSettings only accepts limits from 70 to 100, so below 70% it charges to 70% first
+ * A vote of 0 from this app to the charge enable votables (an AND of every voter) stops the
+ * charger from charging the battery, and nothing else: the charger keeps its input current and
+ * the adapter keeps its voltage, so the phone runs from USB and the battery current stays near
+ * zero. Lineage Health charging control is not used for it: on onyx it stops charging through
+ * the smart_chg SOC limit, which also drops the input to 5 V and 0.5 to 1 A, so a game draws
+ * the rest from the battery.
  *
- * The charging control settings in use before are saved and put back when it is turned off,
- * and BootReceiver turns it off after every boot. Nothing is written to sysfs directly and no
- * root is needed.
+ * Two modes, both held by BypassHold in the app's persistent process:
+ * - smart: charges to 80%, then the phone runs from the charger; charging resumes 3% lower
+ * - bypass: holds the battery level it was turned on at, at any level
  *
- * The settings are written to LineageSettings.System for this user, not through the
- * HealthInterface setters: those write for USER_CURRENT with the caller's identity, which needs
- * INTERACT_ACROSS_USERS_FULL, a platform signature permission that an app updated outside the
- * system image does not get on user builds. ChargingControlController observes the settings.
+ * The vote is gone after a reboot and BootReceiver turns bypass off. Versions before this one
+ * used Lineage charging control; the settings they saved are put back once.
+ *
+ * The node is labeled vendor_sysfs_charge_limit and made writable by init.onyx.rc, in the
+ * device tree, like ichg_limit.
  */
 final class BypassCharging {
     private static final String TAG = "BypassCharging";
@@ -40,33 +46,30 @@ final class BypassCharging {
     static final int MODE_BYPASS = 1;
 
     static final int SMART_LIMIT = 80;
-    // Range of LineageSettings.System.CHARGING_CONTROL_LIMIT_VALIDATOR
-    static final int MIN_LIMIT = 70;
-    static final int MAX_LIMIT = 100;
+    // Charging resumes this many percent below the held level
+    static final int RESUME_MARGIN = 3;
+
+    private static final String NODE =
+            "/sys/devices/platform/soc/soc:mca_charge_interface/charge_enable";
+    // Voter name in the MCA votables, next to ChargeLimit's; "all" covers buck, quick and wireless
+    private static final String VOTE_PREFIX = "bypasscharging all ";
 
     private static final String PREFS = "bypass_charging";
     private static final String KEY_MODE = "mode";
-    // Present only while this app has charging control switched on
+    // Present only while bypass is on: the level it holds
     private static final String KEY_ACTIVE_LIMIT = "active_limit";
+    // Lineage charging control settings saved by earlier versions
     private static final String KEY_SAVED_ENABLED = "saved_enabled";
     private static final String KEY_SAVED_MODE = "saved_mode";
     private static final String KEY_SAVED_LIMIT = "saved_limit";
 
     private final Context mContext;
-    private final HealthInterface mHealth;
     private final ContentResolver mResolver;
     private final SharedPreferences mPrefs;
     private String mLastError;
 
     BypassCharging(Context context) {
         mContext = context;
-        HealthInterface health = null;
-        try {
-            health = HealthInterface.getInstance(context);
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Lineage Health service unavailable", e);
-        }
-        mHealth = health;
         mResolver = context.getContentResolver();
         // Device protected storage: usable before the first unlock (tile, boot receiver)
         mPrefs = context.createDeviceProtectedStorageContext()
@@ -79,7 +82,7 @@ final class BypassCharging {
     }
 
     boolean isSupported() {
-        return mHealth != null && mHealth.isChargingControlSupported();
+        return new File(NODE).canWrite();
     }
 
     int getMode() {
@@ -93,23 +96,20 @@ final class BypassCharging {
         return !isActive() || apply();
     }
 
-    /** The limit in use while active, otherwise -1. */
+    /** The level held while active, otherwise -1. */
     int getActiveLimit() {
-        return isActive() ? mPrefs.getInt(KEY_ACTIVE_LIMIT, -1) : -1;
+        return mPrefs.getInt(KEY_ACTIVE_LIMIT, -1);
     }
 
     boolean isActive() {
-        return isSupported()
-                && mPrefs.contains(KEY_ACTIVE_LIMIT)
-                && mHealth.getEnabled()
-                && mHealth.getMode() == HealthInterface.MODE_LIMIT
-                && mHealth.getLimit() == mPrefs.getInt(KEY_ACTIVE_LIMIT, -1);
+        return mPrefs.contains(KEY_ACTIVE_LIMIT);
     }
 
     /** @return true if the new state was applied */
     boolean setActive(boolean active) {
         mLastError = null;
         if (!isSupported()) {
+            mLastError = NODE + " is not writable";
             return false;
         }
         if (active == isActive()) {
@@ -119,76 +119,48 @@ final class BypassCharging {
             restore();
             return !isActive();
         }
-        if (!mPrefs.contains(KEY_SAVED_ENABLED)) {
-            mPrefs.edit()
-                    .putBoolean(KEY_SAVED_ENABLED, mHealth.getEnabled())
-                    .putInt(KEY_SAVED_MODE, mHealth.getMode())
-                    .putInt(KEY_SAVED_LIMIT, mHealth.getLimit())
-                    .apply();
-        }
         return apply();
     }
 
-    /** Puts back the saved charging control settings if this app changed them. */
+    /** Turns bypass off: charging is allowed again and the held level is forgotten. */
     void restore() {
-        if (mHealth == null) {
-            return;
+        restoreLegacySettings();
+        mPrefs.edit().remove(KEY_ACTIVE_LIMIT).apply();
+        if (!setCharging(true)) {
+            mLastError = "writing " + NODE + " failed";
         }
-        try {
-            restoreSettings();
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Failed to restore charging control", e);
-            mLastError = describe(e);
-        }
-        mPrefs.edit()
-                .remove(KEY_ACTIVE_LIMIT)
-                .remove(KEY_SAVED_ENABLED)
-                .remove(KEY_SAVED_MODE)
-                .remove(KEY_SAVED_LIMIT)
-                .apply();
-    }
-
-    private void restoreSettings() {
-        if (mPrefs.contains(KEY_SAVED_ENABLED)) {
-            int mode = mPrefs.getInt(KEY_SAVED_MODE, HealthInterface.MODE_NONE);
-            if (mode != HealthInterface.MODE_NONE) {
-                putMode(mode);
-            }
-            putLimit(clampLimit(mPrefs.getInt(KEY_SAVED_LIMIT, SMART_LIMIT)));
-            putEnabled(mPrefs.getBoolean(KEY_SAVED_ENABLED, false));
-        } else if (mPrefs.contains(KEY_ACTIVE_LIMIT)) {
-            putEnabled(false);
-        }
+        BypassHold.get(mContext).update();
     }
 
     private boolean apply() {
-        int level = getMode() == MODE_BYPASS ? batteryLevel() : SMART_LIMIT;
-        if (level < 1) {
+        int limit = getMode() == MODE_BYPASS ? batteryLevel() : SMART_LIMIT;
+        if (limit < 1) {
             Log.e(TAG, "Unknown battery level");
-            mLastError = "battery level " + level;
+            mLastError = "battery level " + limit;
             return false;
         }
-        int limit = clampLimit(level);
-        mPrefs.edit().putInt(KEY_ACTIVE_LIMIT, limit).apply();
-        String error = null;
-        try {
-            if (!putMode(HealthInterface.MODE_LIMIT)) {
-                error = "writing mode " + HealthInterface.MODE_LIMIT + " failed";
-            } else if (!putLimit(limit)) {
-                error = "writing limit " + limit + " failed";
-            } else if (!putEnabled(true)) {
-                error = "writing enabled failed";
-            }
-        } catch (RuntimeException e) {
-            Log.e(TAG, "Charging control rejected limit " + limit, e);
-            error = describe(e);
+        restoreLegacySettings();
+        mPrefs.edit().putInt(KEY_ACTIVE_LIMIT, Math.min(limit, 100)).apply();
+        // BypassHold decides from the level whether the battery charges now
+        if (!BypassHold.get(mContext).update()) {
+            mLastError = "writing " + NODE + " failed";
+            mPrefs.edit().remove(KEY_ACTIVE_LIMIT).apply();
+            setCharging(true);
+            return false;
         }
-        if (error != null) {
-            Log.e(TAG, "Failed to set charging control to limit " + limit + ": " + error);
-            restore();
-            mLastError = error;
+        return true;
+    }
+
+    /** Votes for charging the battery or not; the charger keeps running the phone either way. */
+    static boolean setCharging(boolean charging) {
+        // One vote per write: the driver parses a single "user type value" per store
+        try (FileOutputStream out = new FileOutputStream(NODE)) {
+            out.write((VOTE_PREFIX + (charging ? 1 : 0)).getBytes(StandardCharsets.US_ASCII));
+            return true;
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to write charging " + charging + " to " + NODE, e);
+            return false;
         }
-        return error == null;
     }
 
     private int batteryLevel() {
@@ -197,35 +169,32 @@ final class BypassCharging {
         return Math.min(level, 100);
     }
 
-    private boolean putMode(int mode) {
-        return LineageSettings.System.putInt(mResolver,
-                LineageSettings.System.CHARGING_CONTROL_MODE, mode);
-    }
-
-    private boolean putLimit(int limit) {
-        return LineageSettings.System.putInt(mResolver,
-                LineageSettings.System.CHARGING_CONTROL_LIMIT, limit);
-    }
-
-    private boolean putEnabled(boolean enabled) {
-        return LineageSettings.System.putInt(mResolver,
-                LineageSettings.System.CHARGING_CONTROL_ENABLED, enabled ? 1 : 0);
-    }
-
-    /** The exception and the top of the remote stack trace (the check that refused it). */
-    private static String describe(RuntimeException e) {
-        StringBuilder sb = new StringBuilder(e.toString());
-        Throwable remote = e.getCause();
-        if (remote != null) {
-            StackTraceElement[] frames = remote.getStackTrace();
-            for (int i = 0; i < Math.min(frames.length, 6); i++) {
-                sb.append("\n  at ").append(frames[i]);
-            }
+    /** Puts back the Lineage charging control settings an earlier version replaced, once. */
+    private void restoreLegacySettings() {
+        if (!mPrefs.contains(KEY_SAVED_ENABLED)) {
+            return;
         }
-        return sb.toString();
-    }
-
-    private static int clampLimit(int limit) {
-        return Math.max(MIN_LIMIT, Math.min(limit, MAX_LIMIT));
+        try {
+            int mode = mPrefs.getInt(KEY_SAVED_MODE, HealthInterface.MODE_NONE);
+            if (mode != HealthInterface.MODE_NONE) {
+                LineageSettings.System.putInt(mResolver,
+                        LineageSettings.System.CHARGING_CONTROL_MODE, mode);
+            }
+            int limit = mPrefs.getInt(KEY_SAVED_LIMIT, SMART_LIMIT);
+            // LineageSettings.System.CHARGING_CONTROL_LIMIT_VALIDATOR takes 70 to 100
+            LineageSettings.System.putInt(mResolver,
+                    LineageSettings.System.CHARGING_CONTROL_LIMIT,
+                    Math.max(70, Math.min(limit, 100)));
+            LineageSettings.System.putInt(mResolver,
+                    LineageSettings.System.CHARGING_CONTROL_ENABLED,
+                    mPrefs.getBoolean(KEY_SAVED_ENABLED, false) ? 1 : 0);
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Failed to restore charging control", e);
+        }
+        mPrefs.edit()
+                .remove(KEY_SAVED_ENABLED)
+                .remove(KEY_SAVED_MODE)
+                .remove(KEY_SAVED_LIMIT)
+                .apply();
     }
 }

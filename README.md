@@ -7,11 +7,9 @@ Two modes, chosen on the page that opens with a long press on the tile:
 
 - **Smart**: charge up to 80%, then run from the charger; charging resumes at 77%.
 - **Bypass**: hold the battery at the level it had when the tile was turned on. The battery only tops up again
-  once it is 3% lower (when the phone draws more than the charger gives). Charging control only accepts limits
-  from 70 to 100 (`CHARGING_CONTROL_LIMIT_VALIDATOR`), so below 70% the battery charges to 70% first.
+  once it is 3% lower (when the phone draws more than the charger gives), at any level.
 
-Bypass turns itself off after every reboot (`BootReceiver`, on `LOCKED_BOOT_COMPLETED`), and the charging control
-settings from before it was turned on come back whenever it is turned off.
+Bypass turns itself off after every reboot (`BootReceiver`, on `LOCKED_BOOT_COMPLETED`).
 
 ## Cool charging
 
@@ -33,23 +31,19 @@ The app's process is persistent and follows `ACTION_BATTERY_CHANGED`; the vote i
 
 ## How it works
 
-The app only uses the Lineage SDK: it reads charging control through `lineageos.health.HealthInterface` and
-switches Settings > Battery > Charging control to limit mode with the limit above by writing
-`LineageSettings.System` for its own user, which `ChargingControlController` observes. (The `HealthInterface`
-setters write for `USER_CURRENT` with the caller's identity, which needs `INTERACT_ACROSS_USERS_FULL`; on user
-builds that platform signature permission is not granted to an app updated outside the system image.) The Lineage Health HAL then writes the MCA `smart_chg`
-node, configured in the device tree:
+The app votes on the MCA charge interface, `charge_enable`: `bypasscharging all 0` stops charging the battery
+and `bypasscharging all 1` allows it again. The charge enable votables (buck, quick, wireless) are an AND of every
+voter, so the vote only ever stops charging, and it changes nothing else: the charger keeps its input current
+limit and the adapter its voltage, so the phone runs straight from USB and the battery current stays near zero.
+`BypassHold` decides the vote from the held level in the persistent process, on `ACTION_BATTERY_CHANGED`.
 
-| `smart_chg` value | meaning |
-|---|---|
-| `65553` (`0x10011`) | enable + `endurance_pro` (bit 4) + `soc_limit` 1: stop charging the battery now, at any level |
-| `16` | `endurance_pro` off: charge normally |
+Lineage charging control is not used. On onyx its HAL stops charging through the MCA `smart_chg` SOC limit
+(`65553`: `endurance_pro` with `soc_limit` 1), and the buck strategy then also asks the adapter for 5 V and limits
+the input to 500 mA (1000 mA for some batteries), so a game draws the rest from the battery. Versions that used it
+saved the charging control settings; they are put back once.
 
-`smart_chg` reads back a feature mask rather than the written value, so the device overlay sets
-`config_chargingControlToggleSetAlways`, and `config_chargingControlBatteryRechargeMargin` is 3.
-
-It replaces a root-only tile (`com.qs.bypass.charging`) that wrote `smart_night`, which the kernel only honours
-at a fixed 80%.
+The node is labeled `vendor_sysfs_charge_limit` like `ichg_limit` and made writable by `init.onyx.rc`, in the
+device tree.
 
 ## Build
 
@@ -59,5 +53,6 @@ In the device tree:
 PRODUCT_PACKAGES += BypassCharging
 ```
 
-Platform-signed, installed to `system_ext`. Needs `vendor.lineage.health-service.default` with charging control
-on `smart_chg` (see `device.mk` in `fakhrads/android_device_xiaomi_onyx`, branch `evo-cnb`).
+Platform-signed, installed to `system_ext`. Needs the MCA `charge_interface` label and permissions from
+`fakhrads/android_device_xiaomi_onyx` (branch `evo-cnb`): `sepolicy/vendor/genfs_contexts`, `platform_app.te`
+and `init.onyx.rc`.

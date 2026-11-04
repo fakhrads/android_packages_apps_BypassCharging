@@ -13,5 +13,6 @@ public class BypassChargingApp extends Application {
     public void onCreate() {
         super.onCreate();
         CoolCharging.get(this).start();
+        BypassHold.get(this).start();
     }
 }

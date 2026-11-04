@@ -17,7 +17,7 @@
     <string name="not_supported">Kontrol pengisian daya tidak tersedia</string>
     <string name="toggle_failed">Gagal mengubah kontrol pengisian daya</string>
     <string name="summary_smart">Baterai diisi sampai <xliff:g id="limit">%1$d</xliff:g>%%, lalu HP berjalan dari charger. Pengisian lanjut lagi di <xliff:g id="resume">%2$d</xliff:g>%%.</string>
-    <string name="summary_bypass" formatted="false">Baterai berhenti diisi di level saat ini (di bawah 70%, diisi dulu sampai 70%) dan HP berjalan langsung dari charger, cocok untuk main game atau merekam video sambil dicas. Kalau HP butuh daya lebih besar dari charger, baterai diisi lagi setelah turun 3%.</string>
+    <string name="summary_bypass" formatted="false">Baterai berhenti diisi di level saat ini dan HP berjalan langsung dari charger, cocok untuk main game atau merekam video sambil dicas. Kalau HP butuh daya lebih besar dari charger, baterai diisi lagi setelah turun 3%.</string>
     <string name="bypass_switch_title">Gunakan bypass charging</string>
     <string name="category_bypass_mode">Mode bypass</string>
     <string name="category_fast_charging">Pengisian cepat</string>
@@ -41,5 +41,5 @@
     <string name="hero_stat_board">Board</string>
     <string name="hero_charging_title">Mengisi <xliff:g id="watts">%1$.1f</xliff:g> W</string>
     <string name="hero_charging_detail"><xliff:g id="volts">%1$.2f</xliff:g> V · <xliff:g id="amps">%2$.2f</xliff:g> A</string>
-    <string name="footer">Bypass otomatis mati setelah reboot. Fitur ini memakai Setelan &gt; Baterai &gt; Kontrol pengisian daya (mode batas); setelan sebelumnya dikembalikan saat bypass dimatikan.\n\nBatas daya tetap aktif setelah reboot. Yang dibatasi adalah daya yang masuk ke baterai, jadi daya dari charger sedikit lebih besar. Proteksi panas tetap bisa memperlambat pengisian lebih jauh.\n\nPengisian dingin menurunkan arus bertahap mulai 40 °C (10 A, lalu 7 A di 41 °C, 4,5 A di 42 °C dan 2,5 A mulai 43 °C) dan melepas batasnya lagi saat baterai mendingin.</string>
+    <string name="footer">Bypass otomatis mati setelah reboot. Selama menahan, baterai tidak diisi dan charger tetap menyuplai HP dengan daya input penuh; Setelan &gt; Baterai &gt; Kontrol pengisian daya tidak dipakai.\n\nBatas daya tetap aktif setelah reboot. Yang dibatasi adalah daya yang masuk ke baterai, jadi daya dari charger sedikit lebih besar. Proteksi panas tetap bisa memperlambat pengisian lebih jauh.\n\nPengisian dingin menurunkan arus bertahap mulai 40 °C (10 A, lalu 7 A di 41 °C, 4,5 A di 42 °C dan 2,5 A mulai 43 °C) dan melepas batasnya lagi saat baterai mendingin.</string>
 </resources>
