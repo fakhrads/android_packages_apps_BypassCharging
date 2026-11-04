@@ -11,6 +11,8 @@
     <string name="mode_bypass">Bypass</string>
     <string name="subtitle_smart_on">Smart, stops at <xliff:g id="limit">%1$d</xliff:g>%%</string>
     <string name="subtitle_bypass_on">Holding <xliff:g id="limit">%1$d</xliff:g>%%</string>
+    <string name="subtitle_bypass_from">Bypass from <xliff:g id="limit">%1$d</xliff:g>%%</string>
+    <string name="hero_battery_power"><xliff:g id="state">%1$s</xliff:g> · battery <xliff:g id="watts">%2$s</xliff:g> W</string>
     <string name="status_off">Off</string>
     <string name="not_supported">Charging control is not available</string>
     <string name="toggle_failed">Could not change charging control</string>

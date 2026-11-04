@@ -11,6 +11,8 @@
     <string name="mode_bypass">Bypass</string>
     <string name="subtitle_smart_on">Smart, berhenti di <xliff:g id="limit">%1$d</xliff:g>%%</string>
     <string name="subtitle_bypass_on">Menahan <xliff:g id="limit">%1$d</xliff:g>%%</string>
+    <string name="subtitle_bypass_from">Bypass mulai <xliff:g id="limit">%1$d</xliff:g>%%</string>
+    <string name="hero_battery_power"><xliff:g id="state">%1$s</xliff:g> · baterai <xliff:g id="watts">%2$s</xliff:g> W</string>
     <string name="status_off">Mati</string>
     <string name="not_supported">Kontrol pengisian daya tidak tersedia</string>
     <string name="toggle_failed">Gagal mengubah kontrol pengisian daya</string>

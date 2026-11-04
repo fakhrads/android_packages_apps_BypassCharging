@@ -56,6 +56,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import java.util.Locale
 
 private const val READING_INTERVAL_MS = 2000L
 
@@ -250,16 +251,29 @@ private fun ChargingHero(ui: ChargingUi) {
     val state = ui.state
     val reading = ui.reading
     val active = state?.active == true
-    val charging = !active && reading.charging && reading.watts > 0.1
+    // The battery is taking power: before the limit is reached this is true while active too
+    val charging = reading.charging && reading.watts > 0.1
+    val bypass = state?.mode == ChargingState.MODE_BYPASS
+    val limit = state?.activeLimit ?: 0
     val title: String
     val subtitle: String
     when {
+        active && charging -> {
+            title = stringResource(R.string.hero_charging_title, reading.watts)
+            subtitle = stringResource(
+                if (bypass) R.string.subtitle_bypass_from else R.string.subtitle_smart_on, limit
+            )
+        }
         active -> {
             title = stringResource(R.string.tile_label)
+            // Held at the limit the charger runs the phone; what the battery still gives shows
+            // when the charger is not enough
             subtitle = stringResource(
-                if (state?.mode == ChargingState.MODE_BYPASS) R.string.subtitle_bypass_on
-                else R.string.subtitle_smart_on,
-                state?.activeLimit ?: 0
+                R.string.hero_battery_power,
+                stringResource(
+                    if (bypass) R.string.subtitle_bypass_on else R.string.subtitle_smart_on, limit
+                ),
+                String.format(Locale.getDefault(), "%.1f", if (reading.watts > 0.05) -reading.watts else 0.0)
             )
         }
         charging -> {
