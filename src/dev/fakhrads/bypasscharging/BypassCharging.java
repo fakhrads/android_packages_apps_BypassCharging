@@ -11,9 +11,6 @@ import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.util.Log;
 
-import lineageos.health.HealthInterface;
-import lineageos.providers.LineageSettings;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -169,25 +166,16 @@ final class BypassCharging {
         return Math.min(level, 100);
     }
 
-    /** Puts back the Lineage charging control settings an earlier version replaced, once. */
+    /** Puts back the charging control settings an earlier version replaced, once. */
     private void restoreLegacySettings() {
         if (!mPrefs.contains(KEY_SAVED_ENABLED)) {
             return;
         }
         try {
-            int mode = mPrefs.getInt(KEY_SAVED_MODE, HealthInterface.MODE_NONE);
-            if (mode != HealthInterface.MODE_NONE) {
-                LineageSettings.System.putInt(mResolver,
-                        LineageSettings.System.CHARGING_CONTROL_MODE, mode);
-            }
-            int limit = mPrefs.getInt(KEY_SAVED_LIMIT, SMART_LIMIT);
-            // LineageSettings.System.CHARGING_CONTROL_LIMIT_VALIDATOR takes 70 to 100
-            LineageSettings.System.putInt(mResolver,
-                    LineageSettings.System.CHARGING_CONTROL_LIMIT,
-                    Math.max(70, Math.min(limit, 100)));
-            LineageSettings.System.putInt(mResolver,
-                    LineageSettings.System.CHARGING_CONTROL_ENABLED,
-                    mPrefs.getBoolean(KEY_SAVED_ENABLED, false) ? 1 : 0);
+            Integer mode = mPrefs.contains(KEY_SAVED_MODE) ? mPrefs.getInt(KEY_SAVED_MODE, 0) : null;
+            RomPlatform.restoreChargingControl(mResolver, mode,
+                    mPrefs.getInt(KEY_SAVED_LIMIT, SMART_LIMIT),
+                    mPrefs.getBoolean(KEY_SAVED_ENABLED, false));
         } catch (RuntimeException e) {
             Log.e(TAG, "Failed to restore charging control", e);
         }
