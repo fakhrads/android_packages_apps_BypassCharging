@@ -29,8 +29,13 @@ public class BootReceiver extends BroadcastReceiver {
                 && !Intent.ACTION_BOOT_COMPLETED.equals(action)) {
             return;
         }
-        Log.i(TAG, "Boot: turning bypass charging off (" + action + ")");
-        new BypassCharging(context).restore();
+        BypassCharging bypass = new BypassCharging(context);
+        // LOCKED_BOOT_COMPLETED already turned it off: a bypass that is on by BOOT_COMPLETED was
+        // turned on since, and stays
+        if (Intent.ACTION_LOCKED_BOOT_COMPLETED.equals(action) || !bypass.isActive()) {
+            Log.i(TAG, "Boot: turning bypass charging off (" + action + ")");
+            bypass.restore();
+        }
 
         ChargeLimit limit = new ChargeLimit(context);
         if (limit.isEnabled() && !limit.apply()) {
