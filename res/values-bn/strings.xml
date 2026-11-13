@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">চার্জিং ব্যবস্থাপনা</string>
+    <string name="settings_summary">বাইপাস চার্জিং, পাওয়ার সীমা ও কুল চার্জিং</string>
+    <string name="tile_label">বাইপাস চার্জিং</string>
+    <string name="mode_smart">স্মার্ট</string>
+    <string name="mode_bypass">বাইপাস</string>
+    <string name="subtitle_smart_on">স্মার্ট, %1$d%%-এ থামে</string>
+    <string name="subtitle_bypass_on">%1$d%% ধরে রাখছে</string>
+    <string name="subtitle_bypass_from">%1$d%% থেকে বাইপাস</string>
+    <string name="hero_battery_power">%1$s · ব্যাটারি %2$s W</string>
+    <string name="status_off">বন্ধ</string>
+    <string name="not_supported">চার্জিং নিয়ন্ত্রণ উপলব্ধ নেই</string>
+    <string name="toggle_failed">চার্জিং নিয়ন্ত্রণ বদলানো যায়নি</string>
+    <string name="summary_smart">ব্যাটারি %1$d%% পর্যন্ত চার্জ হয়, তারপর ফোন চার্জার থেকে চলে। %2$d%%-এ চার্জিং আবার শুরু হয়।</string>
+    <string name="summary_bypass" formatted="false">ব্যাটারি বর্তমান স্তরে চার্জ হওয়া থামায় এবং ফোন সরাসরি চার্জার থেকে চলে, প্লাগ লাগানো অবস্থায় গেমিং বা রেকর্ডিংয়ের জন্য। ফোনের যদি চার্জারের চেয়ে বেশি শক্তি লাগে, ব্যাটারি 3% কমলে আবার চার্জ হয়।</string>
+    <string name="bypass_switch_title">বাইপাস চার্জিং ব্যবহার করুন</string>
+    <string name="category_bypass_mode">বাইপাস মোড</string>
+    <string name="category_fast_charging">ফাস্ট চার্জিং</string>
+    <string name="cool_title">কুল চার্জিং</string>
+    <string name="cool_summary">ব্যাটারি 40 °C পেরোলে ফাস্ট চার্জিং ধীর করে, যাতে এটি প্রায় 42 °C-এ থাকে। ফোন গরম থাকলে চার্জিংয়ে একটু বেশি সময় লাগে।</string>
+    <string name="limit_off_title">পূর্ণ গতি</string>
+    <string name="limit_off_summary">চার্জার ও ফোনের তাপমাত্রা যতটা দ্রুত দেয়</string>
+    <string name="limit_on_title">পাওয়ার সীমিত করুন</string>
+    <string name="limit_on_summary">ব্যাটারিতে সর্বোচ্চ %1$d W</string>
+    <string name="limit_not_supported">এই বিল্ডে উপলব্ধ নেই</string>
+    <string name="limit_watts_title">সর্বোচ্চ পাওয়ার</string>
+    <string name="limit_failed">ফাস্ট চার্জিং সীমা লেখা যায়নি</string>
+    <string name="reading_title">এখন চার্জ হচ্ছে</string>
+    <string name="reading_idle">ব্যাটারি চার্জ হচ্ছে না</string>
+    <string name="hero_stat_battery">ব্যাটারি</string>
+    <string name="hero_stat_mode">মোড</string>
+    <string name="hero_stat_usb">USB পোর্ট</string>
+    <string name="hero_stat_board">বোর্ড</string>
+    <string name="hero_charging_title">%1$.1f W-এ চার্জ হচ্ছে</string>
+    <string name="footer">রিবুটের পরে বাইপাস নিজে থেকে বন্ধ হয়। চালু থাকার সময় ব্যাটারি চার্জ হয় না এবং চার্জার পূর্ণ ইনপুট পাওয়ারে ফোন চালিয়ে যায়; সেটিংস &gt; ব্যাটারি &gt; চার্জিং নিয়ন্ত্রণ ব্যবহৃত হয় না।\n\nপাওয়ার সীমা রিবুটের পরেও চালু থাকে। এটি ব্যাটারিতে ঢোকা পাওয়ার সীমিত করে, তাই চার্জার নিজে একটু বেশি টানে। অতিরিক্ত গরম সুরক্ষা তবুও চার্জিং আরও ধীর করতে পারে।\n\nকুল চার্জিং 40 °C থেকে কারেন্ট ধাপে ধাপে কমায় (10 A, তারপর 41 °C-এ 7 A, 42 °C-এ 4.5 A এবং 43 °C থেকে 2.5 A) এবং ব্যাটারি ঠান্ডা হলে আবার সীমা তুলে দেয়।</string>
+</resources>

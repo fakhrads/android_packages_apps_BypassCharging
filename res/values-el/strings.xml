@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Διαχείριση φόρτισης</string>
+    <string name="settings_summary">Φόρτιση bypass, όριο ισχύος και δροσερή φόρτιση</string>
+    <string name="tile_label">Φόρτιση bypass</string>
+    <string name="mode_smart">Έξυπνη</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Έξυπνη, σταματά στο %1$d%%</string>
+    <string name="subtitle_bypass_on">Διατήρηση στο %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass από %1$d%%</string>
+    <string name="hero_battery_power">%1$s · μπαταρία %2$s W</string>
+    <string name="status_off">Ανενεργή</string>
+    <string name="not_supported">Ο έλεγχος φόρτισης δεν είναι διαθέσιμος</string>
+    <string name="toggle_failed">Δεν ήταν δυνατή η αλλαγή του ελέγχου φόρτισης</string>
+    <string name="summary_smart">Η μπαταρία φορτίζει μέχρι το %1$d%%, μετά το τηλέφωνο λειτουργεί από τον φορτιστή. Η φόρτιση συνεχίζεται στο %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Η μπαταρία σταματά να φορτίζει στο τρέχον επίπεδο και το τηλέφωνο λειτουργεί απευθείας από τον φορτιστή, για παιχνίδι ή εγγραφή ενώ είναι συνδεδεμένο. Αν το τηλέφωνο χρειάζεται περισσότερη ισχύ απ\' όση δίνει ο φορτιστής, η μπαταρία φορτίζει ξανά μόλις πέσει 3%.</string>
+    <string name="bypass_switch_title">Χρήση φόρτισης bypass</string>
+    <string name="category_bypass_mode">Λειτουργία bypass</string>
+    <string name="category_fast_charging">Γρήγορη φόρτιση</string>
+    <string name="cool_title">Δροσερή φόρτιση</string>
+    <string name="cool_summary">Επιβραδύνει τη γρήγορη φόρτιση μόλις η μπαταρία ξεπεράσει τους 40 °C, ώστε να μένει γύρω στους 42 °C. Η φόρτιση διαρκεί λίγο περισσότερο όταν το τηλέφωνο είναι ζεστό.</string>
+    <string name="limit_off_title">Πλήρης ταχύτητα</string>
+    <string name="limit_off_summary">Όσο γρήγορα επιτρέπουν ο φορτιστής και η θερμοκρασία του τηλεφώνου</string>
+    <string name="limit_on_title">Περιορισμός ισχύος</string>
+    <string name="limit_on_summary">Έως %1$d W προς την μπαταρία</string>
+    <string name="limit_not_supported">Μη διαθέσιμο σε αυτή την έκδοση</string>
+    <string name="limit_watts_title">Μέγιστη ισχύς</string>
+    <string name="limit_failed">Δεν ήταν δυνατή η εγγραφή του ορίου γρήγορης φόρτισης</string>
+    <string name="reading_title">Φόρτιση τώρα</string>
+    <string name="reading_idle">Η μπαταρία δεν φορτίζει</string>
+    <string name="hero_stat_battery">Μπαταρία</string>
+    <string name="hero_stat_mode">Λειτουργία</string>
+    <string name="hero_stat_usb">Θύρα USB</string>
+    <string name="hero_stat_board">Πλακέτα</string>
+    <string name="hero_charging_title">Φόρτιση στα %1$.1f W</string>
+    <string name="footer">Το bypass απενεργοποιείται μόνο του μετά από επανεκκίνηση. Όσο είναι ενεργό, η μπαταρία δεν φορτίζει και ο φορτιστής τροφοδοτεί το τηλέφωνο με την πλήρη ισχύ εισόδου· οι Ρυθμίσεις &gt; Μπαταρία &gt; Έλεγχος φόρτισης δεν χρησιμοποιούνται.\n\nΤο όριο ισχύος παραμένει ενεργό μετά από επανεκκίνηση. Περιορίζει την ισχύ που μπαίνει στην μπαταρία, οπότε ο ίδιος ο φορτιστής τραβά λίγο περισσότερο. Η προστασία υπερθέρμανσης μπορεί να επιβραδύνει κι άλλο τη φόρτιση.\n\nΗ δροσερή φόρτιση μειώνει το ρεύμα σταδιακά από τους 40 °C (10 A, μετά 7 A στους 41 °C, 4.5 A στους 42 °C και 2.5 A από τους 43 °C) και αίρει ξανά το όριο καθώς η μπαταρία κρυώνει.</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">充電管理</string>
+    <string name="settings_summary">バイパス充電、電力制限、クール充電</string>
+    <string name="tile_label">バイパス充電</string>
+    <string name="mode_smart">スマート</string>
+    <string name="mode_bypass">バイパス</string>
+    <string name="subtitle_smart_on">スマート、%1$d%% で停止</string>
+    <string name="subtitle_bypass_on">%1$d%% を維持</string>
+    <string name="subtitle_bypass_from">%1$d%% からバイパス</string>
+    <string name="hero_battery_power">%1$s · バッテリー %2$s W</string>
+    <string name="status_off">オフ</string>
+    <string name="not_supported">充電制御を利用できません</string>
+    <string name="toggle_failed">充電制御を変更できませんでした</string>
+    <string name="summary_smart">バッテリーは %1$d%% まで充電され、その後は充電器から端末に給電します。%2$d%% で充電を再開します。</string>
+    <string name="summary_bypass" formatted="false">バッテリーは現在の残量で充電を止め、端末は充電器から直接給電されます。充電しながらのゲームや録画に。充電器の供給より多くの電力が必要な場合は、残量が 3% 下がった時点で再び充電します。</string>
+    <string name="bypass_switch_title">バイパス充電を使う</string>
+    <string name="category_bypass_mode">バイパスモード</string>
+    <string name="category_fast_charging">急速充電</string>
+    <string name="cool_title">クール充電</string>
+    <string name="cool_summary">バッテリーが 40 °C を超えると急速充電を緩め、42 °C 前後に保ちます。端末が温かいときは充電に少し時間がかかります。</string>
+    <string name="limit_off_title">フルスピード</string>
+    <string name="limit_off_summary">充電器と端末の温度が許す限り速く</string>
+    <string name="limit_on_title">電力を制限</string>
+    <string name="limit_on_summary">バッテリーへ最大 %1$d W</string>
+    <string name="limit_not_supported">このビルドでは利用できません</string>
+    <string name="limit_watts_title">最大電力</string>
+    <string name="limit_failed">急速充電の制限を書き込めませんでした</string>
+    <string name="reading_title">現在の充電</string>
+    <string name="reading_idle">バッテリーを充電していません</string>
+    <string name="hero_stat_battery">バッテリー</string>
+    <string name="hero_stat_mode">モード</string>
+    <string name="hero_stat_usb">USB ポート</string>
+    <string name="hero_stat_board">基板</string>
+    <string name="hero_charging_title">%1$.1f W で充電中</string>
+    <string name="footer">バイパスは再起動するとオフになります。維持している間はバッテリーを充電せず、充電器が最大入力電力で端末を動かし続けます。「設定 &gt; バッテリー &gt; 充電制御」は使われません。\n\n電力制限は再起動後もオンのままです。バッテリーへ入る電力を制限するため、充電器自体の消費は少し多くなります。過熱保護によってさらに充電が遅くなることがあります。\n\nクール充電は 40 °C から電流を段階的に下げ（10 A、41 °C で 7 A、42 °C で 4.5 A、43 °C 以上で 2.5 A）、バッテリーが冷えると制限を再び緩めます。</string>
+</resources>

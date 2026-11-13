@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">चार्जिंग मैनेजमेंट</string>
+    <string name="settings_summary">बायपास चार्जिंग, पावर सीमा और कूल चार्जिंग</string>
+    <string name="tile_label">बायपास चार्जिंग</string>
+    <string name="mode_smart">स्मार्ट</string>
+    <string name="mode_bypass">बायपास</string>
+    <string name="subtitle_smart_on">स्मार्ट, %1$d%% पर रुकता है</string>
+    <string name="subtitle_bypass_on">%1$d%% पर रोका हुआ</string>
+    <string name="subtitle_bypass_from">%1$d%% से बायपास</string>
+    <string name="hero_battery_power">%1$s · बैटरी %2$s W</string>
+    <string name="status_off">बंद</string>
+    <string name="not_supported">चार्जिंग कंट्रोल उपलब्ध नहीं है</string>
+    <string name="toggle_failed">चार्जिंग कंट्रोल बदला नहीं जा सका</string>
+    <string name="summary_smart">बैटरी %1$d%% तक चार्ज होती है, फिर फ़ोन चार्जर से चलता है। %2$d%% पर चार्जिंग फिर शुरू होती है।</string>
+    <string name="summary_bypass" formatted="false">बैटरी अभी के लेवल पर चार्ज होना बंद कर देती है और फ़ोन सीधे चार्जर से चलता है, प्लग लगे रहते गेमिंग या रिकॉर्डिंग के लिए। अगर फ़ोन को चार्जर से ज़्यादा पावर चाहिए, तो बैटरी 3% घटने पर फिर चार्ज होती है।</string>
+    <string name="bypass_switch_title">बायपास चार्जिंग इस्तेमाल करें</string>
+    <string name="category_bypass_mode">बायपास मोड</string>
+    <string name="category_fast_charging">फ़ास्ट चार्जिंग</string>
+    <string name="cool_title">कूल चार्जिंग</string>
+    <string name="cool_summary">बैटरी 40 °C पार करते ही फ़ास्ट चार्जिंग धीमी करता है, ताकि वह लगभग 42 °C पर रहे। फ़ोन गर्म होने पर चार्जिंग थोड़ी ज़्यादा देर लेती है।</string>
+    <string name="limit_off_title">पूरी स्पीड</string>
+    <string name="limit_off_summary">जितना चार्जर और फ़ोन का तापमान अनुमति दे, उतना तेज़</string>
+    <string name="limit_on_title">पावर सीमित करें</string>
+    <string name="limit_on_summary">बैटरी में अधिकतम %1$d W</string>
+    <string name="limit_not_supported">इस बिल्ड पर उपलब्ध नहीं</string>
+    <string name="limit_watts_title">अधिकतम पावर</string>
+    <string name="limit_failed">फ़ास्ट चार्जिंग सीमा लिखी नहीं जा सकी</string>
+    <string name="reading_title">अभी चार्जिंग</string>
+    <string name="reading_idle">बैटरी चार्ज नहीं हो रही</string>
+    <string name="hero_stat_battery">बैटरी</string>
+    <string name="hero_stat_mode">मोड</string>
+    <string name="hero_stat_usb">USB पोर्ट</string>
+    <string name="hero_stat_board">बोर्ड</string>
+    <string name="hero_charging_title">%1$.1f W पर चार्ज हो रहा है</string>
+    <string name="footer">रीबूट के बाद बायपास अपने-आप बंद हो जाता है। जब तक यह चालू है, बैटरी चार्ज नहीं होती और चार्जर फ़ोन को पूरी इनपुट पावर पर चलाता है; सेटिंग &gt; बैटरी &gt; चार्जिंग कंट्रोल इस्तेमाल नहीं होता।\n\nपावर सीमा रीबूट के बाद भी चालू रहती है। यह बैटरी में जाने वाली पावर सीमित करती है, इसलिए चार्जर खुद थोड़ी ज़्यादा बिजली लेता है। ज़्यादा गर्मी से सुरक्षा फिर भी चार्जिंग और धीमी कर सकती है।\n\nकूल चार्जिंग 40 °C से करंट चरणों में घटाती है (10 A, फिर 41 °C पर 7 A, 42 °C पर 4.5 A और 43 °C से 2.5 A) और बैटरी ठंडी होने पर सीमा फिर हटाती है।</string>
+</resources>

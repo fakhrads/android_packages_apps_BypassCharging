@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Zarządzanie ładowaniem</string>
+    <string name="settings_summary">Ładowanie bypass, limit mocy i chłodne ładowanie</string>
+    <string name="tile_label">Ładowanie bypass</string>
+    <string name="mode_smart">Inteligentne</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Inteligentne, zatrzymuje przy %1$d%%</string>
+    <string name="subtitle_bypass_on">Utrzymuje %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass od %1$d%%</string>
+    <string name="hero_battery_power">%1$s · bateria %2$s W</string>
+    <string name="status_off">Wył.</string>
+    <string name="not_supported">Sterowanie ładowaniem jest niedostępne</string>
+    <string name="toggle_failed">Nie udało się zmienić sterowania ładowaniem</string>
+    <string name="summary_smart">Bateria ładuje się do %1$d%%, potem telefon działa z ładowarki. Ładowanie wznawia się przy %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Bateria przestaje się ładować na obecnym poziomie, a telefon działa bezpośrednio z ładowarki, do gier lub nagrywania pod ładowarką. Jeśli telefon potrzebuje więcej mocy, niż daje ładowarka, bateria doładuje się, gdy spadnie o 3%.</string>
+    <string name="bypass_switch_title">Używaj ładowania bypass</string>
+    <string name="category_bypass_mode">Tryb bypass</string>
+    <string name="category_fast_charging">Szybkie ładowanie</string>
+    <string name="cool_title">Chłodne ładowanie</string>
+    <string name="cool_summary">Spowalnia szybkie ładowanie, gdy bateria przekroczy 40 °C, aby utrzymać ją w okolicach 42 °C. Gdy telefon jest ciepły, ładowanie trwa nieco dłużej.</string>
+    <string name="limit_off_title">Pełna prędkość</string>
+    <string name="limit_off_summary">Tak szybko, jak pozwalają ładowarka i temperatura telefonu</string>
+    <string name="limit_on_title">Ogranicz moc</string>
+    <string name="limit_on_summary">Do %1$d W do baterii</string>
+    <string name="limit_not_supported">Niedostępne w tej kompilacji</string>
+    <string name="limit_watts_title">Maksymalna moc</string>
+    <string name="limit_failed">Nie udało się zapisać limitu szybkiego ładowania</string>
+    <string name="reading_title">Ładowanie teraz</string>
+    <string name="reading_idle">Bateria nie jest ładowana</string>
+    <string name="hero_stat_battery">Bateria</string>
+    <string name="hero_stat_mode">Tryb</string>
+    <string name="hero_stat_usb">Port USB</string>
+    <string name="hero_stat_board">Płyta</string>
+    <string name="hero_charging_title">Ładowanie %1$.1f W</string>
+    <string name="footer">Bypass wyłącza się po ponownym uruchomieniu. Gdy jest aktywny, bateria nie jest ładowana, a ładowarka zasila telefon pełną mocą wejściową; Ustawienia &gt; Bateria &gt; Sterowanie ładowaniem nie jest używane.\n\nLimit mocy pozostaje po ponownym uruchomieniu. Ogranicza moc trafiającą do baterii, więc sama ładowarka pobiera nieco więcej. Ochrona przed przegrzaniem może jeszcze bardziej spowolnić ładowanie.\n\nChłodne ładowanie obniża prąd stopniowo od 40 °C (10 A, potem 7 A przy 41 °C, 4.5 A przy 42 °C i 2.5 A od 43 °C) i znosi limit, gdy bateria stygnie.</string>
+</resources>

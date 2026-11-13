@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Quản lý sạc</string>
+    <string name="settings_summary">Sạc bypass, giới hạn công suất và sạc mát</string>
+    <string name="tile_label">Sạc bypass</string>
+    <string name="mode_smart">Thông minh</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Thông minh, dừng ở %1$d%%</string>
+    <string name="subtitle_bypass_on">Đang giữ %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass từ %1$d%%</string>
+    <string name="hero_battery_power">%1$s · pin %2$s W</string>
+    <string name="status_off">Tắt</string>
+    <string name="not_supported">Không có điều khiển sạc</string>
+    <string name="toggle_failed">Không đổi được điều khiển sạc</string>
+    <string name="summary_smart">Pin sạc đến %1$d%%, sau đó điện thoại chạy bằng nguồn từ bộ sạc. Sạc tiếp tục ở %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Pin ngừng sạc ở mức hiện tại và điện thoại chạy thẳng bằng bộ sạc, để chơi game hoặc quay video khi đang cắm sạc. Nếu điện thoại cần nhiều điện hơn bộ sạc cung cấp, pin sẽ sạc lại khi tụt 3%.</string>
+    <string name="bypass_switch_title">Dùng sạc bypass</string>
+    <string name="category_bypass_mode">Chế độ bypass</string>
+    <string name="category_fast_charging">Sạc nhanh</string>
+    <string name="cool_title">Sạc mát</string>
+    <string name="cool_summary">Giảm tốc sạc nhanh khi pin vượt 40 °C để giữ quanh 42 °C. Sạc lâu hơn một chút khi điện thoại ấm.</string>
+    <string name="limit_off_title">Tốc độ tối đa</string>
+    <string name="limit_off_summary">Nhanh nhất mà bộ sạc và nhiệt độ điện thoại cho phép</string>
+    <string name="limit_on_title">Giới hạn công suất</string>
+    <string name="limit_on_summary">Tối đa %1$d W vào pin</string>
+    <string name="limit_not_supported">Không có trên bản dựng này</string>
+    <string name="limit_watts_title">Công suất tối đa</string>
+    <string name="limit_failed">Không ghi được giới hạn sạc nhanh</string>
+    <string name="reading_title">Đang sạc</string>
+    <string name="reading_idle">Pin không được sạc</string>
+    <string name="hero_stat_battery">Pin</string>
+    <string name="hero_stat_mode">Chế độ</string>
+    <string name="hero_stat_usb">Cổng USB</string>
+    <string name="hero_stat_board">Bo mạch</string>
+    <string name="hero_charging_title">Đang sạc %1$.1f W</string>
+    <string name="footer">Bypass tự tắt sau khi khởi động lại. Khi đang giữ, pin không được sạc và bộ sạc tiếp tục cấp điện cho điện thoại ở toàn bộ công suất đầu vào; Cài đặt &gt; Pin &gt; Điều khiển sạc không được dùng.\n\nGiới hạn công suất vẫn bật sau khi khởi động lại. Nó giới hạn công suất đi vào pin, nên bản thân bộ sạc tiêu thụ nhiều hơn một chút. Bảo vệ quá nhiệt vẫn có thể làm chậm sạc thêm.\n\nSạc mát giảm dòng theo từng bậc từ 40 °C (10 A, rồi 7 A ở 41 °C, 4.5 A ở 42 °C và 2.5 A từ 43 °C) và nới giới hạn lại khi pin nguội.</string>
+</resources>

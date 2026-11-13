@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Töltéskezelés</string>
+    <string name="settings_summary">Bypass töltés, teljesítménykorlát és hűvös töltés</string>
+    <string name="tile_label">Bypass töltés</string>
+    <string name="mode_smart">Okos</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Okos, %1$d%%-nál megáll</string>
+    <string name="subtitle_bypass_on">%1$d%% tartva</string>
+    <string name="subtitle_bypass_from">Bypass %1$d%%-tól</string>
+    <string name="hero_battery_power">%1$s · akkumulátor %2$s W</string>
+    <string name="status_off">Ki</string>
+    <string name="not_supported">A töltésvezérlés nem érhető el</string>
+    <string name="toggle_failed">Nem sikerült módosítani a töltésvezérlést</string>
+    <string name="summary_smart">Az akkumulátor %1$d%%-ig töltődik, utána a telefon a töltőről működik. A töltés %2$d%%-nál folytatódik.</string>
+    <string name="summary_bypass" formatted="false">Az akkumulátor a jelenlegi szinten abbahagyja a töltődést, és a telefon közvetlenül a töltőről működik, játékhoz vagy felvételhez töltés közben. Ha a telefonnak több energia kell, mint amit a töltő ad, az akkumulátor újratöltődik, ha 3%-kal lejjebb van.</string>
+    <string name="bypass_switch_title">Bypass töltés használata</string>
+    <string name="category_bypass_mode">Bypass mód</string>
+    <string name="category_fast_charging">Gyorstöltés</string>
+    <string name="cool_title">Hűvös töltés</string>
+    <string name="cool_summary">Lelassítja a gyorstöltést, ha az akkumulátor 40 °C fölé melegszik, hogy 42 °C körül maradjon. Meleg telefonnál a töltés kicsit tovább tart.</string>
+    <string name="limit_off_title">Teljes sebesség</string>
+    <string name="limit_off_summary">Olyan gyorsan, ahogy a töltő és a telefon hőmérséklete engedi</string>
+    <string name="limit_on_title">Teljesítmény korlátozása</string>
+    <string name="limit_on_summary">Legfeljebb %1$d W az akkumulátorba</string>
+    <string name="limit_not_supported">Ebben a buildben nem érhető el</string>
+    <string name="limit_watts_title">Maximális teljesítmény</string>
+    <string name="limit_failed">Nem sikerült beírni a gyorstöltési korlátot</string>
+    <string name="reading_title">Töltés most</string>
+    <string name="reading_idle">Az akkumulátor nem töltődik</string>
+    <string name="hero_stat_battery">Akkumulátor</string>
+    <string name="hero_stat_mode">Mód</string>
+    <string name="hero_stat_usb">USB-port</string>
+    <string name="hero_stat_board">Alaplap</string>
+    <string name="hero_charging_title">Töltés %1$.1f W-tal</string>
+    <string name="footer">A bypass újraindítás után magától kikapcsol. Amíg aktív, az akkumulátor nem töltődik, és a töltő teljes bemeneti teljesítménnyel működteti a telefont; a Beállítások &gt; Akkumulátor &gt; Töltésvezérlés nincs használatban.\n\nA teljesítménykorlát újraindítás után is bekapcsolva marad. Az akkumulátorba jutó teljesítményt korlátozza, így maga a töltő valamivel többet vesz fel. A túlmelegedés elleni védelem tovább lassíthatja a töltést.\n\nA hűvös töltés 40 °C-tól fokozatosan csökkenti az áramot (10 A, majd 7 A 41 °C-on, 4.5 A 42 °C-on és 2.5 A 43 °C-tól), és ahogy az akkumulátor hűl, újra feloldja a korlátot.</string>
+</resources>

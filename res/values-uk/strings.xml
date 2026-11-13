@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Керування заряджанням</string>
+    <string name="settings_summary">Обхідне заряджання, обмеження потужності й холодне заряджання</string>
+    <string name="tile_label">Обхідне заряджання</string>
+    <string name="mode_smart">Розумне</string>
+    <string name="mode_bypass">Обхід</string>
+    <string name="subtitle_smart_on">Розумне, зупинка на %1$d%%</string>
+    <string name="subtitle_bypass_on">Утримання %1$d%%</string>
+    <string name="subtitle_bypass_from">Обхід з %1$d%%</string>
+    <string name="hero_battery_power">%1$s · батарея %2$s Вт</string>
+    <string name="status_off">Вимк.</string>
+    <string name="not_supported">Керування заряджанням недоступне</string>
+    <string name="toggle_failed">Не вдалося змінити керування заряджанням</string>
+    <string name="summary_smart">Батарея заряджається до %1$d%%, потім телефон працює від зарядного пристрою. Заряджання відновиться на %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Батарея припиняє заряджатися на поточному рівні, а телефон працює безпосередньо від зарядного пристрою, для ігор чи запису на зарядці. Якщо телефону потрібно більше потужності, ніж дає зарядний пристрій, батарея знову підзарядиться, коли знизиться на 3%.</string>
+    <string name="bypass_switch_title">Використовувати обхідне заряджання</string>
+    <string name="category_bypass_mode">Режим обходу</string>
+    <string name="category_fast_charging">Швидке заряджання</string>
+    <string name="cool_title">Холодне заряджання</string>
+    <string name="cool_summary">Сповільнює швидке заряджання, коли батарея перевищує 40 °C, і тримає її близько 42 °C. Коли телефон теплий, заряджання триває трохи довше.</string>
+    <string name="limit_off_title">Повна швидкість</string>
+    <string name="limit_off_summary">Так швидко, як дозволяють зарядний пристрій і температура телефона</string>
+    <string name="limit_on_title">Обмежити потужність</string>
+    <string name="limit_on_summary">До %1$d Вт у батарею</string>
+    <string name="limit_not_supported">Недоступно в цій збірці</string>
+    <string name="limit_watts_title">Максимальна потужність</string>
+    <string name="limit_failed">Не вдалося записати обмеження швидкого заряджання</string>
+    <string name="reading_title">Заряджання зараз</string>
+    <string name="reading_idle">Батарея не заряджається</string>
+    <string name="hero_stat_battery">Батарея</string>
+    <string name="hero_stat_mode">Режим</string>
+    <string name="hero_stat_usb">USB-порт</string>
+    <string name="hero_stat_board">Плата</string>
+    <string name="hero_charging_title">Заряджання %1$.1f Вт</string>
+    <string name="footer">Обхід вимикається після перезавантаження. Поки він діє, батарея не заряджається, а зарядний пристрій живить телефон на повній вхідній потужності; «Налаштування &gt; Батарея &gt; Керування заряджанням» не використовується.\n\nОбмеження потужності зберігається після перезавантаження. Воно обмежує потужність, що надходить у батарею, тож сам зарядний пристрій споживає трохи більше. Захист від перегріву все одно може ще сильніше сповільнити заряджання.\n\nХолодне заряджання ступінчасто знижує струм від 40 °C (10 А, потім 7 А за 41 °C, 4.5 А за 42 °C і 2.5 А від 43 °C) і знову знімає обмеження, коли батарея охолоджується.</string>
+</resources>

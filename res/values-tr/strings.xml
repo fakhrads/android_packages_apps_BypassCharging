@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Şarj yönetimi</string>
+    <string name="settings_summary">Bypass şarj, güç sınırı ve serin şarj</string>
+    <string name="tile_label">Bypass şarj</string>
+    <string name="mode_smart">Akıllı</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Akıllı, %%%1$d\'de durur</string>
+    <string name="subtitle_bypass_on">%%%1$d tutuluyor</string>
+    <string name="subtitle_bypass_from">%%%1$d\'den itibaren bypass</string>
+    <string name="hero_battery_power">%1$s · pil %2$s W</string>
+    <string name="status_off">Kapalı</string>
+    <string name="not_supported">Şarj kontrolü kullanılamıyor</string>
+    <string name="toggle_failed">Şarj kontrolü değiştirilemedi</string>
+    <string name="summary_smart">Pil %%%1$d\'e kadar şarj olur, ardından telefon şarj cihazından çalışır. Şarj %%%2$d\'de yeniden başlar.</string>
+    <string name="summary_bypass" formatted="false">Pil mevcut seviyesinde şarjı durdurur ve telefon doğrudan şarj cihazından çalışır; prize takılıyken oyun veya kayıt için. Telefon şarj cihazının verdiğinden fazla güce ihtiyaç duyarsa pil %3 düştüğünde yeniden şarj olur.</string>
+    <string name="bypass_switch_title">Bypass şarj kullan</string>
+    <string name="category_bypass_mode">Bypass modu</string>
+    <string name="category_fast_charging">Hızlı şarj</string>
+    <string name="cool_title">Serin şarj</string>
+    <string name="cool_summary">Pil 40 °C\'yi geçtiğinde hızlı şarjı yavaşlatır, böylece 42 °C civarında kalır. Telefon ılıkken şarj biraz daha uzun sürer.</string>
+    <string name="limit_off_title">Tam hız</string>
+    <string name="limit_off_summary">Şarj cihazının ve telefon sıcaklığının izin verdiği kadar hızlı</string>
+    <string name="limit_on_title">Gücü sınırla</string>
+    <string name="limit_on_summary">Pile en fazla %1$d W</string>
+    <string name="limit_not_supported">Bu sürümde kullanılamıyor</string>
+    <string name="limit_watts_title">Maksimum güç</string>
+    <string name="limit_failed">Hızlı şarj sınırı yazılamadı</string>
+    <string name="reading_title">Şu anki şarj</string>
+    <string name="reading_idle">Pil şarj olmuyor</string>
+    <string name="hero_stat_battery">Pil</string>
+    <string name="hero_stat_mode">Mod</string>
+    <string name="hero_stat_usb">USB bağlantı noktası</string>
+    <string name="hero_stat_board">Kart</string>
+    <string name="hero_charging_title">%1$.1f W ile şarj oluyor</string>
+    <string name="footer">Bypass yeniden başlatmadan sonra kendiliğinden kapanır. Etkin olduğu sürece pil şarj olmaz ve şarj cihazı telefonu tam giriş gücüyle çalıştırmaya devam eder; Ayarlar &gt; Pil &gt; Şarj kontrolü kullanılmaz.\n\nGüç sınırı yeniden başlatmadan sonra da açık kalır. Pile giden gücü sınırlar, bu yüzden şarj cihazının kendisi biraz daha fazla çeker. Aşırı ısınma koruması şarjı yine daha da yavaşlatabilir.\n\nSerin şarj akımı 40 °C\'den itibaren kademeli düşürür (10 A, sonra 41 °C\'de 7 A, 42 °C\'de 4.5 A ve 43 °C\'den itibaren 2.5 A) ve pil soğudukça sınırı yeniden kaldırır.</string>
+</resources>

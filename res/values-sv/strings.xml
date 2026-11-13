@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Laddningshantering</string>
+    <string name="settings_summary">Bypass-laddning, effektgräns och sval laddning</string>
+    <string name="tile_label">Bypass-laddning</string>
+    <string name="mode_smart">Smart</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Smart, stannar vid %1$d%%</string>
+    <string name="subtitle_bypass_on">Håller %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass från %1$d%%</string>
+    <string name="hero_battery_power">%1$s · batteri %2$s W</string>
+    <string name="status_off">Av</string>
+    <string name="not_supported">Laddningskontroll är inte tillgänglig</string>
+    <string name="toggle_failed">Det gick inte att ändra laddningskontrollen</string>
+    <string name="summary_smart">Batteriet laddas upp till %1$d%%, sedan drivs telefonen av laddaren. Laddningen fortsätter vid %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Batteriet slutar ladda vid sin nuvarande nivå och telefonen drivs direkt av laddaren, för att spela eller spela in med laddaren ansluten. Om telefonen behöver mer ström än laddaren ger fylls batteriet på igen när det är 3% lägre.</string>
+    <string name="bypass_switch_title">Använd bypass-laddning</string>
+    <string name="category_bypass_mode">Bypass-läge</string>
+    <string name="category_fast_charging">Snabbladdning</string>
+    <string name="cool_title">Sval laddning</string>
+    <string name="cool_summary">Saktar ned snabbladdningen när batteriet passerar 40 °C så att det håller sig runt 42 °C. Laddningen tar lite längre tid när telefonen är varm.</string>
+    <string name="limit_off_title">Full hastighet</string>
+    <string name="limit_off_summary">Så snabbt som laddaren och telefonens temperatur tillåter</string>
+    <string name="limit_on_title">Begränsa effekt</string>
+    <string name="limit_on_summary">Upp till %1$d W in i batteriet</string>
+    <string name="limit_not_supported">Inte tillgängligt i den här versionen</string>
+    <string name="limit_watts_title">Maximal effekt</string>
+    <string name="limit_failed">Det gick inte att skriva snabbladdningsgränsen</string>
+    <string name="reading_title">Laddar nu</string>
+    <string name="reading_idle">Batteriet laddas inte</string>
+    <string name="hero_stat_battery">Batteri</string>
+    <string name="hero_stat_mode">Läge</string>
+    <string name="hero_stat_usb">USB-port</string>
+    <string name="hero_stat_board">Kretskort</string>
+    <string name="hero_charging_title">Laddar med %1$.1f W</string>
+    <string name="footer">Bypass stängs av efter en omstart. Medan den håller laddas inte batteriet och laddaren driver telefonen med full ineffekt; Inställningar &gt; Batteri &gt; Laddningskontroll används inte.\n\nEffektgränsen förblir på efter en omstart. Den begränsar effekten som går in i batteriet, så själva laddaren drar lite mer. Överhettningsskyddet kan fortfarande sakta ned laddningen ytterligare.\n\nSval laddning sänker strömmen stegvis från 40 °C (10 A, sedan 7 A vid 41 °C, 4.5 A vid 42 °C och 2.5 A från 43 °C) och höjer gränsen igen när batteriet svalnar.</string>
+</resources>

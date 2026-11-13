@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Pengurusan pengecasan</string>
+    <string name="settings_summary">Pengecasan pintas, had kuasa dan pengecasan sejuk</string>
+    <string name="tile_label">Pengecasan pintas</string>
+    <string name="mode_smart">Pintar</string>
+    <string name="mode_bypass">Pintas</string>
+    <string name="subtitle_smart_on">Pintar, berhenti pada %1$d%%</string>
+    <string name="subtitle_bypass_on">Menahan %1$d%%</string>
+    <string name="subtitle_bypass_from">Pintas dari %1$d%%</string>
+    <string name="hero_battery_power">%1$s · bateri %2$s W</string>
+    <string name="status_off">Mati</string>
+    <string name="not_supported">Kawalan pengecasan tidak tersedia</string>
+    <string name="toggle_failed">Tidak dapat menukar kawalan pengecasan</string>
+    <string name="summary_smart">Bateri dicas hingga %1$d%%, kemudian telefon berjalan daripada pengecas. Pengecasan disambung semula pada %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Bateri berhenti dicas pada tahap semasa dan telefon berjalan terus daripada pengecas, untuk bermain atau merakam semasa dipalamkan. Jika telefon memerlukan lebih kuasa daripada yang diberi pengecas, bateri dicas semula sebaik turun 3%.</string>
+    <string name="bypass_switch_title">Guna pengecasan pintas</string>
+    <string name="category_bypass_mode">Mod pintas</string>
+    <string name="category_fast_charging">Pengecasan pantas</string>
+    <string name="cool_title">Pengecasan sejuk</string>
+    <string name="cool_summary">Memperlahankan pengecasan pantas sebaik bateri melepasi 40 °C, supaya kekal sekitar 42 °C. Pengecasan mengambil sedikit lebih masa apabila telefon hangat.</string>
+    <string name="limit_off_title">Kelajuan penuh</string>
+    <string name="limit_off_summary">Sepantas yang dibenarkan pengecas dan suhu telefon</string>
+    <string name="limit_on_title">Hadkan kuasa</string>
+    <string name="limit_on_summary">Sehingga %1$d W ke dalam bateri</string>
+    <string name="limit_not_supported">Tidak tersedia pada binaan ini</string>
+    <string name="limit_watts_title">Kuasa maksimum</string>
+    <string name="limit_failed">Tidak dapat menulis had pengecasan pantas</string>
+    <string name="reading_title">Sedang mengecas</string>
+    <string name="reading_idle">Bateri tidak dicas</string>
+    <string name="hero_stat_battery">Bateri</string>
+    <string name="hero_stat_mode">Mod</string>
+    <string name="hero_stat_usb">Port USB</string>
+    <string name="hero_stat_board">Papan</string>
+    <string name="hero_charging_title">Mengecas pada %1$.1f W</string>
+    <string name="footer">Pintas mati sendiri selepas mula semula. Semasa ia menahan, bateri tidak dicas dan pengecas terus menjalankan telefon pada kuasa input penuhnya; Tetapan &gt; Bateri &gt; Kawalan pengecasan tidak digunakan.\n\nHad kuasa kekal hidup selepas mula semula. Ia mengehadkan kuasa yang masuk ke bateri, jadi pengecas itu sendiri menarik sedikit lebih. Perlindungan panas lampau masih boleh memperlahankan pengecasan lagi.\n\nPengecasan sejuk menurunkan arus secara berperingkat dari 40 °C (10 A, kemudian 7 A pada 41 °C, 4.5 A pada 42 °C dan 2.5 A dari 43 °C) dan menaikkan had semula apabila bateri menyejuk.</string>
+</resources>

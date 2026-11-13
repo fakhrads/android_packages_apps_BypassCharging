@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Pamamahala ng pag-charge</string>
+    <string name="settings_summary">Bypass charging, power limit at cool na pag-charge</string>
+    <string name="tile_label">Bypass charging</string>
+    <string name="mode_smart">Smart</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Smart, humihinto sa %1$d%%</string>
+    <string name="subtitle_bypass_on">Pinapanatili ang %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass mula %1$d%%</string>
+    <string name="hero_battery_power">%1$s · baterya %2$s W</string>
+    <string name="status_off">Naka-off</string>
+    <string name="not_supported">Hindi available ang kontrol sa pag-charge</string>
+    <string name="toggle_failed">Hindi mabago ang kontrol sa pag-charge</string>
+    <string name="summary_smart">Nagcha-charge ang baterya hanggang %1$d%%, tapos sa charger na tumatakbo ang telepono. Magpapatuloy ang pag-charge sa %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Humihinto ang pag-charge ng baterya sa kasalukuyang antas at direkta sa charger tumatakbo ang telepono, para sa paglalaro o pag-record habang nakasaksak. Kung kailangan ng telepono ng mas maraming kuryente kaysa ibinibigay ng charger, magcha-charge ulit ang baterya kapag bumaba ito ng 3%.</string>
+    <string name="bypass_switch_title">Gamitin ang bypass charging</string>
+    <string name="category_bypass_mode">Bypass mode</string>
+    <string name="category_fast_charging">Fast charging</string>
+    <string name="cool_title">Cool na pag-charge</string>
+    <string name="cool_summary">Pinapabagal ang fast charging kapag lumampas sa 40 °C ang baterya, para manatili ito sa mga 42 °C. Medyo mas matagal ang pag-charge kapag mainit ang telepono.</string>
+    <string name="limit_off_title">Buong bilis</string>
+    <string name="limit_off_summary">Kasimbilis ng pinapayagan ng charger at temperatura ng telepono</string>
+    <string name="limit_on_title">Limitahan ang power</string>
+    <string name="limit_on_summary">Hanggang %1$d W papunta sa baterya</string>
+    <string name="limit_not_supported">Hindi available sa build na ito</string>
+    <string name="limit_watts_title">Pinakamataas na power</string>
+    <string name="limit_failed">Hindi maisulat ang limitasyon ng fast charging</string>
+    <string name="reading_title">Nagcha-charge ngayon</string>
+    <string name="reading_idle">Hindi nagcha-charge ang baterya</string>
+    <string name="hero_stat_battery">Baterya</string>
+    <string name="hero_stat_mode">Mode</string>
+    <string name="hero_stat_usb">USB port</string>
+    <string name="hero_stat_board">Board</string>
+    <string name="hero_charging_title">Nagcha-charge sa %1$.1f W</string>
+    <string name="footer">Kusang mao-off ang bypass pagkatapos ng reboot. Habang aktibo ito, hindi nagcha-charge ang baterya at patuloy na pinapatakbo ng charger ang telepono sa buong input power; hindi ginagamit ang Settings &gt; Baterya &gt; Kontrol sa pag-charge.\n\nNananatiling naka-on ang power limit pagkatapos ng reboot. Nililimitahan nito ang power na pumapasok sa baterya, kaya medyo mas malakas kumuha ang charger mismo. Maaari pa ring pabagalin ng overheat protection ang pag-charge.\n\nIbinababa ng cool na pag-charge ang current nang paunti-unti mula 40 °C (10 A, tapos 7 A sa 41 °C, 4.5 A sa 42 °C at 2.5 A mula 43 °C) at inaalis muli ang limitasyon habang lumalamig ang baterya.</string>
+</resources>

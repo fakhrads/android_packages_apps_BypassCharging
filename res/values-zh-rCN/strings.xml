@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">充电管理</string>
+    <string name="settings_summary">旁路充电、功率限制和低温充电</string>
+    <string name="tile_label">旁路充电</string>
+    <string name="mode_smart">智能</string>
+    <string name="mode_bypass">旁路</string>
+    <string name="subtitle_smart_on">智能，在 %1$d%% 停止</string>
+    <string name="subtitle_bypass_on">保持 %1$d%%</string>
+    <string name="subtitle_bypass_from">从 %1$d%% 开始旁路</string>
+    <string name="hero_battery_power">%1$s · 电池 %2$s W</string>
+    <string name="status_off">关</string>
+    <string name="not_supported">充电控制不可用</string>
+    <string name="toggle_failed">无法更改充电控制</string>
+    <string name="summary_smart">电池充到 %1$d%% 后，手机改由充电器供电。电量降到 %2$d%% 时恢复充电。</string>
+    <string name="summary_bypass" formatted="false">电池在当前电量停止充电，手机直接由充电器供电，适合插电时游戏或录像。如果手机所需功率超过充电器的供给，电量下降 3% 后电池会再次补充。</string>
+    <string name="bypass_switch_title">使用旁路充电</string>
+    <string name="category_bypass_mode">旁路模式</string>
+    <string name="category_fast_charging">快充</string>
+    <string name="cool_title">低温充电</string>
+    <string name="cool_summary">电池超过 40 °C 时降低快充功率，使其保持在 42 °C 左右。手机较热时充电会稍慢。</string>
+    <string name="limit_off_title">全速</string>
+    <string name="limit_off_summary">在充电器和手机温度允许的范围内尽可能快</string>
+    <string name="limit_on_title">限制功率</string>
+    <string name="limit_on_summary">进入电池的功率最高 %1$d W</string>
+    <string name="limit_not_supported">此版本不可用</string>
+    <string name="limit_watts_title">最大功率</string>
+    <string name="limit_failed">无法写入快充限制</string>
+    <string name="reading_title">当前充电</string>
+    <string name="reading_idle">电池未在充电</string>
+    <string name="hero_stat_battery">电池</string>
+    <string name="hero_stat_mode">模式</string>
+    <string name="hero_stat_usb">USB 接口</string>
+    <string name="hero_stat_board">主板</string>
+    <string name="hero_charging_title">正在以 %1$.1f W 充电</string>
+    <string name="footer">旁路在重启后会自动关闭。保持期间电池不充电，充电器以完整输入功率为手机供电；不会使用“设置 &gt; 电池 &gt; 充电控制”。\n\n功率限制在重启后仍然有效。它限制进入电池的功率，因此充电器本身的耗电会略多一些。过热保护仍可能进一步降低充电速度。\n\n低温充电从 40 °C 开始逐级降低电流（10 A，41 °C 时 7 A，42 °C 时 4.5 A，43 °C 起 2.5 A），电池降温后再逐步解除限制。</string>
+</resources>

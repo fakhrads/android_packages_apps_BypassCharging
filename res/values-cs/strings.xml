@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Správa nabíjení</string>
+    <string name="settings_summary">Bypass nabíjení, limit výkonu a chladné nabíjení</string>
+    <string name="tile_label">Bypass nabíjení</string>
+    <string name="mode_smart">Chytré</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Chytré, zastaví na %1$d%%</string>
+    <string name="subtitle_bypass_on">Drží %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass od %1$d%%</string>
+    <string name="hero_battery_power">%1$s · baterie %2$s W</string>
+    <string name="status_off">Vyp.</string>
+    <string name="not_supported">Řízení nabíjení není k dispozici</string>
+    <string name="toggle_failed">Řízení nabíjení se nepodařilo změnit</string>
+    <string name="summary_smart">Baterie se nabije na %1$d%%, pak telefon běží z nabíječky. Nabíjení pokračuje na %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Baterie se přestane nabíjet na aktuální úrovni a telefon běží přímo z nabíječky, pro hraní nebo nahrávání v zásuvce. Pokud telefon potřebuje víc energie, než nabíječka dává, baterie se znovu dobije, jakmile klesne o 3%.</string>
+    <string name="bypass_switch_title">Použít bypass nabíjení</string>
+    <string name="category_bypass_mode">Režim bypass</string>
+    <string name="category_fast_charging">Rychlé nabíjení</string>
+    <string name="cool_title">Chladné nabíjení</string>
+    <string name="cool_summary">Zpomalí rychlé nabíjení, jakmile baterie překročí 40 °C, aby zůstala kolem 42 °C. Když je telefon teplý, nabíjení trvá o něco déle.</string>
+    <string name="limit_off_title">Plná rychlost</string>
+    <string name="limit_off_summary">Tak rychle, jak dovolí nabíječka a teplota telefonu</string>
+    <string name="limit_on_title">Omezit výkon</string>
+    <string name="limit_on_summary">Až %1$d W do baterie</string>
+    <string name="limit_not_supported">V tomto sestavení není k dispozici</string>
+    <string name="limit_watts_title">Maximální výkon</string>
+    <string name="limit_failed">Limit rychlého nabíjení se nepodařilo zapsat</string>
+    <string name="reading_title">Právě se nabíjí</string>
+    <string name="reading_idle">Baterie se nenabíjí</string>
+    <string name="hero_stat_battery">Baterie</string>
+    <string name="hero_stat_mode">Režim</string>
+    <string name="hero_stat_usb">Port USB</string>
+    <string name="hero_stat_board">Deska</string>
+    <string name="hero_charging_title">Nabíjení %1$.1f W</string>
+    <string name="footer">Bypass se po restartu sám vypne. Dokud drží, baterie se nenabíjí a nabíječka napájí telefon plným vstupním výkonem; Nastavení &gt; Baterie &gt; Řízení nabíjení se nepoužívá.\n\nLimit výkonu zůstane zapnutý i po restartu. Omezuje výkon proudící do baterie, takže samotná nabíječka odebírá o něco víc. Ochrana proti přehřátí může nabíjení dál zpomalit.\n\nChladné nabíjení snižuje proud postupně od 40 °C (10 A, pak 7 A při 41 °C, 4.5 A při 42 °C a 2.5 A od 43 °C) a znovu limit uvolňuje, jak baterie chladne.</string>
+</resources>

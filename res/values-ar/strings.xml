@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">إدارة الشحن</string>
+    <string name="settings_summary">الشحن التجاوزي وحد الطاقة والشحن البارد</string>
+    <string name="tile_label">الشحن التجاوزي</string>
+    <string name="mode_smart">ذكي</string>
+    <string name="mode_bypass">تجاوزي</string>
+    <string name="subtitle_smart_on">ذكي، يتوقف عند %1$d%%</string>
+    <string name="subtitle_bypass_on">يثبت عند %1$d%%</string>
+    <string name="subtitle_bypass_from">تجاوزي من %1$d%%</string>
+    <string name="hero_battery_power">%1$s · البطارية %2$s W</string>
+    <string name="status_off">متوقف</string>
+    <string name="not_supported">التحكم في الشحن غير متاح</string>
+    <string name="toggle_failed">تعذّر تغيير التحكم في الشحن</string>
+    <string name="summary_smart">تُشحن البطارية حتى %1$d%%، ثم يعمل الهاتف من الشاحن. يُستأنف الشحن عند %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">تتوقف البطارية عن الشحن عند مستواها الحالي ويعمل الهاتف مباشرةً من الشاحن، للعب أو التسجيل وهو موصول. إذا احتاج الهاتف طاقة أكثر مما يعطيه الشاحن، تُشحن البطارية مجددًا عندما تنخفض 3%.</string>
+    <string name="bypass_switch_title">استخدام الشحن التجاوزي</string>
+    <string name="category_bypass_mode">وضع التجاوز</string>
+    <string name="category_fast_charging">الشحن السريع</string>
+    <string name="cool_title">الشحن البارد</string>
+    <string name="cool_summary">يبطئ الشحن السريع عندما تتجاوز البطارية 40 °C، لتبقى قرب 42 °C. يستغرق الشحن وقتًا أطول قليلًا عندما يكون الهاتف دافئًا.</string>
+    <string name="limit_off_title">السرعة الكاملة</string>
+    <string name="limit_off_summary">بأسرع ما يسمح به الشاحن وحرارة الهاتف</string>
+    <string name="limit_on_title">تقييد الطاقة</string>
+    <string name="limit_on_summary">حتى %1$d W إلى البطارية</string>
+    <string name="limit_not_supported">غير متاح في هذا الإصدار</string>
+    <string name="limit_watts_title">أقصى طاقة</string>
+    <string name="limit_failed">تعذّرت كتابة حد الشحن السريع</string>
+    <string name="reading_title">الشحن الآن</string>
+    <string name="reading_idle">البطارية لا تُشحن</string>
+    <string name="hero_stat_battery">البطارية</string>
+    <string name="hero_stat_mode">الوضع</string>
+    <string name="hero_stat_usb">منفذ USB</string>
+    <string name="hero_stat_board">اللوحة الأم</string>
+    <string name="hero_charging_title">الشحن بقدرة %1$.1f W</string>
+    <string name="footer">يتوقف التجاوز تلقائيًا بعد إعادة التشغيل. أثناء عمله لا تُشحن البطارية ويواصل الشاحن تشغيل الهاتف بكامل قدرة الإدخال؛ ولا يُستخدم الإعدادات &gt; البطارية &gt; التحكم في الشحن.\n\nيبقى حد الطاقة مفعّلًا بعد إعادة التشغيل. فهو يقيّد الطاقة الداخلة إلى البطارية، فيسحب الشاحن نفسه أكثر قليلًا. وقد تبطئ حماية السخونة الزائدة الشحن أكثر.\n\nالشحن البارد يخفض التيار على مراحل بدءًا من 40 °C (10 A، ثم 7 A عند 41 °C، و4.5 A عند 42 °C، و2.5 A من 43 °C) ويرفع الحد مجددًا مع تبرّد البطارية.</string>
+</resources>

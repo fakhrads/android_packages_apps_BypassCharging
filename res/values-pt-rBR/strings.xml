@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Gerenciamento de carga</string>
+    <string name="settings_summary">Carregamento bypass, limite de potência e carregamento frio</string>
+    <string name="tile_label">Carregamento bypass</string>
+    <string name="mode_smart">Inteligente</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Inteligente, para em %1$d%%</string>
+    <string name="subtitle_bypass_on">Mantendo %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass a partir de %1$d%%</string>
+    <string name="hero_battery_power">%1$s · bateria %2$s W</string>
+    <string name="status_off">Desativado</string>
+    <string name="not_supported">O controle de carregamento não está disponível</string>
+    <string name="toggle_failed">Não foi possível alterar o controle de carregamento</string>
+    <string name="summary_smart">A bateria carrega até %1$d%% e depois o telefone funciona pelo carregador. O carregamento volta em %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">A bateria para de carregar no nível atual e o telefone funciona direto pelo carregador, para jogar ou gravar na tomada. Se o telefone precisar de mais energia do que o carregador fornece, a bateria volta a carregar quando cair 3%.</string>
+    <string name="bypass_switch_title">Usar carregamento bypass</string>
+    <string name="category_bypass_mode">Modo bypass</string>
+    <string name="category_fast_charging">Carregamento rápido</string>
+    <string name="cool_title">Carregamento frio</string>
+    <string name="cool_summary">Reduz o carregamento rápido quando a bateria passa de 40 °C, para que fique em torno de 42 °C. Carregar demora um pouco mais quando o telefone está quente.</string>
+    <string name="limit_off_title">Velocidade máxima</string>
+    <string name="limit_off_summary">Tão rápido quanto o carregador e a temperatura do telefone permitirem</string>
+    <string name="limit_on_title">Limitar potência</string>
+    <string name="limit_on_summary">Até %1$d W para a bateria</string>
+    <string name="limit_not_supported">Indisponível nesta build</string>
+    <string name="limit_watts_title">Potência máxima</string>
+    <string name="limit_failed">Não foi possível gravar o limite de carregamento rápido</string>
+    <string name="reading_title">Carregando agora</string>
+    <string name="reading_idle">A bateria não está carregando</string>
+    <string name="hero_stat_battery">Bateria</string>
+    <string name="hero_stat_mode">Modo</string>
+    <string name="hero_stat_usb">Porta USB</string>
+    <string name="hero_stat_board">Placa</string>
+    <string name="hero_charging_title">Carregando a %1$.1f W</string>
+    <string name="footer">O bypass se desativa sozinho após reiniciar. Enquanto está ativo, a bateria não carrega e o carregador mantém o telefone funcionando com a potência de entrada total; Configurações &gt; Bateria &gt; Controle de carregamento não é usado.\n\nO limite de potência continua ativo após reiniciar. Ele limita a potência que entra na bateria, então o próprio carregador consome um pouco mais. A proteção contra superaquecimento ainda pode desacelerar mais o carregamento.\n\nO carregamento frio reduz a corrente em etapas a partir de 40 °C (10 A, depois 7 A a 41 °C, 4.5 A a 42 °C e 2.5 A a partir de 43 °C) e volta a liberar o limite conforme a bateria esfria.</string>
+</resources>

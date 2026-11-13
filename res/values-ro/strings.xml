@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Gestionarea încărcării</string>
+    <string name="settings_summary">Încărcare bypass, limită de putere și încărcare rece</string>
+    <string name="tile_label">Încărcare bypass</string>
+    <string name="mode_smart">Inteligentă</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Inteligentă, se oprește la %1$d%%</string>
+    <string name="subtitle_bypass_on">Menține %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass de la %1$d%%</string>
+    <string name="hero_battery_power">%1$s · baterie %2$s W</string>
+    <string name="status_off">Dezactivat</string>
+    <string name="not_supported">Controlul încărcării nu este disponibil</string>
+    <string name="toggle_failed">Controlul încărcării nu a putut fi schimbat</string>
+    <string name="summary_smart">Bateria se încarcă până la %1$d%%, apoi telefonul funcționează de la încărcător. Încărcarea se reia la %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">Bateria nu se mai încarcă de la nivelul actual, iar telefonul funcționează direct de la încărcător, pentru jocuri sau înregistrări cât e conectat. Dacă telefonul are nevoie de mai multă putere decât oferă încărcătorul, bateria se reîncarcă după ce scade cu 3%.</string>
+    <string name="bypass_switch_title">Folosește încărcarea bypass</string>
+    <string name="category_bypass_mode">Mod bypass</string>
+    <string name="category_fast_charging">Încărcare rapidă</string>
+    <string name="cool_title">Încărcare rece</string>
+    <string name="cool_summary">Încetinește încărcarea rapidă după ce bateria trece de 40 °C, ca să rămână în jur de 42 °C. Încărcarea durează puțin mai mult când telefonul e cald.</string>
+    <string name="limit_off_title">Viteză maximă</string>
+    <string name="limit_off_summary">Cât de repede permit încărcătorul și temperatura telefonului</string>
+    <string name="limit_on_title">Limitează puterea</string>
+    <string name="limit_on_summary">Până la %1$d W în baterie</string>
+    <string name="limit_not_supported">Indisponibil în această versiune</string>
+    <string name="limit_watts_title">Putere maximă</string>
+    <string name="limit_failed">Limita de încărcare rapidă nu a putut fi scrisă</string>
+    <string name="reading_title">Se încarcă acum</string>
+    <string name="reading_idle">Bateria nu se încarcă</string>
+    <string name="hero_stat_battery">Baterie</string>
+    <string name="hero_stat_mode">Mod</string>
+    <string name="hero_stat_usb">Port USB</string>
+    <string name="hero_stat_board">Placă</string>
+    <string name="hero_charging_title">Se încarcă la %1$.1f W</string>
+    <string name="footer">Bypass-ul se oprește singur după o repornire. Cât timp e activ, bateria nu se încarcă, iar încărcătorul alimentează telefonul la puterea de intrare completă; Setări &gt; Baterie &gt; Controlul încărcării nu este folosit.\n\nLimita de putere rămâne activă după o repornire. Limitează puterea care intră în baterie, așa că încărcătorul consumă puțin mai mult. Protecția la supraîncălzire poate încetini și mai mult încărcarea.\n\nÎncărcarea rece reduce curentul în trepte de la 40 °C (10 A, apoi 7 A la 41 °C, 4.5 A la 42 °C și 2.5 A de la 43 °C) și ridică din nou limita pe măsură ce bateria se răcește.</string>
+</resources>

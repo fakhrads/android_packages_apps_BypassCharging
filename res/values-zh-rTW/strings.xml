@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">充電管理</string>
+    <string name="settings_summary">旁路充電、功率限制和低溫充電</string>
+    <string name="tile_label">旁路充電</string>
+    <string name="mode_smart">智慧</string>
+    <string name="mode_bypass">旁路</string>
+    <string name="subtitle_smart_on">智慧，在 %1$d%% 停止</string>
+    <string name="subtitle_bypass_on">維持 %1$d%%</string>
+    <string name="subtitle_bypass_from">從 %1$d%% 開始旁路</string>
+    <string name="hero_battery_power">%1$s · 電池 %2$s W</string>
+    <string name="status_off">關閉</string>
+    <string name="not_supported">無法使用充電控制</string>
+    <string name="toggle_failed">無法變更充電控制</string>
+    <string name="summary_smart">電池充到 %1$d%% 後，手機改由充電器供電。電量降到 %2$d%% 時恢復充電。</string>
+    <string name="summary_bypass" formatted="false">電池在目前電量停止充電，手機直接由充電器供電，適合插電時玩遊戲或錄影。如果手機所需功率超過充電器的供應，電量下降 3% 後電池會再次補充。</string>
+    <string name="bypass_switch_title">使用旁路充電</string>
+    <string name="category_bypass_mode">旁路模式</string>
+    <string name="category_fast_charging">快充</string>
+    <string name="cool_title">低溫充電</string>
+    <string name="cool_summary">電池超過 40 °C 時降低快充功率，使其維持在 42 °C 左右。手機較熱時充電會稍慢。</string>
+    <string name="limit_off_title">全速</string>
+    <string name="limit_off_summary">在充電器和手機溫度允許的範圍內盡可能快</string>
+    <string name="limit_on_title">限制功率</string>
+    <string name="limit_on_summary">進入電池的功率最高 %1$d W</string>
+    <string name="limit_not_supported">此版本無法使用</string>
+    <string name="limit_watts_title">最大功率</string>
+    <string name="limit_failed">無法寫入快充限制</string>
+    <string name="reading_title">目前充電</string>
+    <string name="reading_idle">電池未在充電</string>
+    <string name="hero_stat_battery">電池</string>
+    <string name="hero_stat_mode">模式</string>
+    <string name="hero_stat_usb">USB 連接埠</string>
+    <string name="hero_stat_board">主機板</string>
+    <string name="hero_charging_title">正以 %1$.1f W 充電</string>
+    <string name="footer">旁路在重新啟動後會自動關閉。維持期間電池不充電，充電器以完整輸入功率為手機供電；不會使用「設定 &gt; 電池 &gt; 充電控制」。\n\n功率限制在重新啟動後仍然有效。它限制進入電池的功率，因此充電器本身的耗電會略多一些。過熱保護仍可能進一步降低充電速度。\n\n低溫充電從 40 °C 開始逐級降低電流（10 A，41 °C 時 7 A，42 °C 時 4.5 A，43 °C 起 2.5 A），電池降溫後再逐步解除限制。</string>
+</resources>

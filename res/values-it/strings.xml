@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Gestione della ricarica</string>
+    <string name="settings_summary">Ricarica bypass, limite di potenza e ricarica fresca</string>
+    <string name="tile_label">Ricarica bypass</string>
+    <string name="mode_smart">Intelligente</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Intelligente, si ferma al %1$d%%</string>
+    <string name="subtitle_bypass_on">Mantiene il %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass dal %1$d%%</string>
+    <string name="hero_battery_power">%1$s · batteria %2$s W</string>
+    <string name="status_off">Disattivata</string>
+    <string name="not_supported">Il controllo della ricarica non è disponibile</string>
+    <string name="toggle_failed">Impossibile modificare il controllo della ricarica</string>
+    <string name="summary_smart">La batteria si carica fino al %1$d%%, poi il telefono funziona con il caricabatterie. La ricarica riprende al %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">La batteria smette di caricarsi al livello attuale e il telefono funziona direttamente con il caricabatterie, per giocare o registrare mentre è collegato. Se il telefono ha bisogno di più energia di quella fornita dal caricabatterie, la batteria si ricarica quando scende del 3%.</string>
+    <string name="bypass_switch_title">Usa la ricarica bypass</string>
+    <string name="category_bypass_mode">Modalità bypass</string>
+    <string name="category_fast_charging">Ricarica rapida</string>
+    <string name="cool_title">Ricarica fresca</string>
+    <string name="cool_summary">Rallenta la ricarica rapida quando la batteria supera i 40 °C, così resta intorno ai 42 °C. La ricarica dura un po\' di più quando il telefono è caldo.</string>
+    <string name="limit_off_title">Velocità piena</string>
+    <string name="limit_off_summary">Veloce quanto consentono il caricabatterie e la temperatura del telefono</string>
+    <string name="limit_on_title">Limita la potenza</string>
+    <string name="limit_on_summary">Fino a %1$d W verso la batteria</string>
+    <string name="limit_not_supported">Non disponibile in questa build</string>
+    <string name="limit_watts_title">Potenza massima</string>
+    <string name="limit_failed">Impossibile scrivere il limite di ricarica rapida</string>
+    <string name="reading_title">In carica ora</string>
+    <string name="reading_idle">La batteria non si sta caricando</string>
+    <string name="hero_stat_battery">Batteria</string>
+    <string name="hero_stat_mode">Modalità</string>
+    <string name="hero_stat_usb">Porta USB</string>
+    <string name="hero_stat_board">Scheda</string>
+    <string name="hero_charging_title">In carica a %1$.1f W</string>
+    <string name="footer">Il bypass si disattiva da solo dopo un riavvio. Mentre è attivo, la batteria non si carica e il caricabatterie alimenta il telefono alla piena potenza in ingresso; Impostazioni &gt; Batteria &gt; Controllo ricarica non viene usato.\n\nIl limite di potenza resta attivo dopo un riavvio. Limita la potenza che entra nella batteria, quindi il caricabatterie assorbe un po\' di più. La protezione dal surriscaldamento può comunque rallentare ulteriormente la ricarica.\n\nLa ricarica fresca abbassa la corrente a gradini da 40 °C (10 A, poi 7 A a 41 °C, 4.5 A a 42 °C e 2.5 A da 43 °C) e alza di nuovo il limite man mano che la batteria si raffredda.</string>
+</resources>

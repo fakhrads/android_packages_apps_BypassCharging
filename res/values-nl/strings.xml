@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Oplaadbeheer</string>
+    <string name="settings_summary">Bypass opladen, vermogenslimiet en koel opladen</string>
+    <string name="tile_label">Bypass opladen</string>
+    <string name="mode_smart">Slim</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Slim, stopt bij %1$d%%</string>
+    <string name="subtitle_bypass_on">Houdt %1$d%% vast</string>
+    <string name="subtitle_bypass_from">Bypass vanaf %1$d%%</string>
+    <string name="hero_battery_power">%1$s · batterij %2$s W</string>
+    <string name="status_off">Uit</string>
+    <string name="not_supported">Oplaadbeheer is niet beschikbaar</string>
+    <string name="toggle_failed">Kan oplaadbeheer niet wijzigen</string>
+    <string name="summary_smart">De batterij laadt op tot %1$d%%, daarna draait de telefoon op de oplader. Opladen gaat verder bij %2$d%%.</string>
+    <string name="summary_bypass" formatted="false">De batterij stopt met opladen op het huidige niveau en de telefoon draait direct op de oplader, om te gamen of op te nemen terwijl hij is aangesloten. Als de telefoon meer vermogen nodig heeft dan de oplader levert, laadt de batterij weer bij zodra hij 3% lager staat.</string>
+    <string name="bypass_switch_title">Bypass opladen gebruiken</string>
+    <string name="category_bypass_mode">Bypassmodus</string>
+    <string name="category_fast_charging">Snelladen</string>
+    <string name="cool_title">Koel opladen</string>
+    <string name="cool_summary">Vertraagt het snelladen zodra de batterij boven 40 °C komt, zodat hij rond 42 °C blijft. Opladen duurt iets langer als de telefoon warm is.</string>
+    <string name="limit_off_title">Volle snelheid</string>
+    <string name="limit_off_summary">Zo snel als de oplader en de temperatuur van de telefoon toelaten</string>
+    <string name="limit_on_title">Vermogen beperken</string>
+    <string name="limit_on_summary">Tot %1$d W naar de batterij</string>
+    <string name="limit_not_supported">Niet beschikbaar in deze build</string>
+    <string name="limit_watts_title">Maximaal vermogen</string>
+    <string name="limit_failed">Kan de snellaadlimiet niet schrijven</string>
+    <string name="reading_title">Nu aan het opladen</string>
+    <string name="reading_idle">De batterij wordt niet opgeladen</string>
+    <string name="hero_stat_battery">Batterij</string>
+    <string name="hero_stat_mode">Modus</string>
+    <string name="hero_stat_usb">USB-poort</string>
+    <string name="hero_stat_board">Moederbord</string>
+    <string name="hero_charging_title">Opladen met %1$.1f W</string>
+    <string name="footer">Bypass schakelt zichzelf uit na een herstart. Zolang hij actief is, wordt de batterij niet opgeladen en blijft de oplader de telefoon op vol ingangsvermogen voeden; Instellingen &gt; Batterij &gt; Oplaadbeheer wordt niet gebruikt.\n\nDe vermogenslimiet blijft aan na een herstart. Hij begrenst het vermogen dat de batterij in gaat, dus de oplader zelf verbruikt iets meer. Oververhittingsbeveiliging kan het opladen nog verder vertragen.\n\nKoel opladen verlaagt de stroom stapsgewijs vanaf 40 °C (10 A, dan 7 A bij 41 °C, 4.5 A bij 42 °C en 2.5 A vanaf 43 °C) en heft de limiet weer op naarmate de batterij afkoelt.</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">การจัดการการชาร์จ</string>
+    <string name="settings_summary">ชาร์จแบบบายพาส จำกัดกำลังไฟ และชาร์จเย็น</string>
+    <string name="tile_label">ชาร์จแบบบายพาส</string>
+    <string name="mode_smart">อัจฉริยะ</string>
+    <string name="mode_bypass">บายพาส</string>
+    <string name="subtitle_smart_on">อัจฉริยะ หยุดที่ %1$d%%</string>
+    <string name="subtitle_bypass_on">คงไว้ที่ %1$d%%</string>
+    <string name="subtitle_bypass_from">บายพาสตั้งแต่ %1$d%%</string>
+    <string name="hero_battery_power">%1$s · แบตเตอรี่ %2$s W</string>
+    <string name="status_off">ปิด</string>
+    <string name="not_supported">ใช้การควบคุมการชาร์จไม่ได้</string>
+    <string name="toggle_failed">เปลี่ยนการควบคุมการชาร์จไม่ได้</string>
+    <string name="summary_smart">แบตเตอรี่ชาร์จถึง %1$d%% จากนั้นโทรศัพท์จะใช้ไฟจากที่ชาร์จ การชาร์จจะเริ่มใหม่ที่ %2$d%%</string>
+    <string name="summary_bypass" formatted="false">แบตเตอรี่หยุดชาร์จที่ระดับปัจจุบัน และโทรศัพท์ใช้ไฟจากที่ชาร์จโดยตรง เหมาะกับการเล่นเกมหรือบันทึกวิดีโอขณะเสียบสาย หากโทรศัพท์ต้องการไฟมากกว่าที่ที่ชาร์จจ่ายได้ แบตจะชาร์จเพิ่มเมื่อลดลง 3%</string>
+    <string name="bypass_switch_title">ใช้การชาร์จแบบบายพาส</string>
+    <string name="category_bypass_mode">โหมดบายพาส</string>
+    <string name="category_fast_charging">ชาร์จเร็ว</string>
+    <string name="cool_title">ชาร์จเย็น</string>
+    <string name="cool_summary">ลดความเร็วชาร์จเมื่อแบตเกิน 40 °C เพื่อให้อยู่ราว 42 °C การชาร์จจะนานขึ้นเล็กน้อยเมื่อโทรศัพท์อุ่น</string>
+    <string name="limit_off_title">ความเร็วเต็มที่</string>
+    <string name="limit_off_summary">เร็วเท่าที่ที่ชาร์จและอุณหภูมิของโทรศัพท์อนุญาต</string>
+    <string name="limit_on_title">จำกัดกำลังไฟ</string>
+    <string name="limit_on_summary">สูงสุด %1$d W เข้าแบตเตอรี่</string>
+    <string name="limit_not_supported">ไม่มีในบิลด์นี้</string>
+    <string name="limit_watts_title">กำลังไฟสูงสุด</string>
+    <string name="limit_failed">เขียนขีดจำกัดการชาร์จเร็วไม่ได้</string>
+    <string name="reading_title">กำลังชาร์จตอนนี้</string>
+    <string name="reading_idle">ไม่ได้ชาร์จแบตเตอรี่</string>
+    <string name="hero_stat_battery">แบตเตอรี่</string>
+    <string name="hero_stat_mode">โหมด</string>
+    <string name="hero_stat_usb">พอร์ต USB</string>
+    <string name="hero_stat_board">บอร์ด</string>
+    <string name="hero_charging_title">กำลังชาร์จ %1$.1f W</string>
+    <string name="footer">บายพาสจะปิดเองหลังรีสตาร์ท ขณะทำงาน แบตจะไม่ถูกชาร์จ และที่ชาร์จจะจ่ายไฟให้โทรศัพท์ด้วยกำลังไฟขาเข้าเต็มที่ โดยไม่ใช้ การตั้งค่า &gt; แบตเตอรี่ &gt; การควบคุมการชาร์จ\n\nขีดจำกัดกำลังไฟยังคงเปิดหลังรีสตาร์ท โดยจำกัดกำลังไฟที่เข้าแบต ที่ชาร์จจึงดึงไฟมากขึ้นเล็กน้อย ระบบป้องกันความร้อนเกินยังอาจทำให้ชาร์จช้าลงอีก\n\nชาร์จเย็นจะลดกระแสเป็นขั้นตั้งแต่ 40 °C (10 A แล้ว 7 A ที่ 41 °C, 4.5 A ที่ 42 °C และ 2.5 A ตั้งแต่ 43 °C) และปลดขีดจำกัดอีกครั้งเมื่อแบตเย็นลง</string>
+</resources>

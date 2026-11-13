@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 Fakhri Adi Saputra
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Ladeverwaltung</string>
+    <string name="settings_summary">Bypass-Laden, Leistungsgrenze und kühles Laden</string>
+    <string name="tile_label">Bypass-Laden</string>
+    <string name="mode_smart">Smart</string>
+    <string name="mode_bypass">Bypass</string>
+    <string name="subtitle_smart_on">Smart, stoppt bei %1$d%%</string>
+    <string name="subtitle_bypass_on">Hält %1$d%%</string>
+    <string name="subtitle_bypass_from">Bypass ab %1$d%%</string>
+    <string name="hero_battery_power">%1$s · Akku %2$s W</string>
+    <string name="status_off">Aus</string>
+    <string name="not_supported">Ladesteuerung ist nicht verfügbar</string>
+    <string name="toggle_failed">Ladesteuerung konnte nicht geändert werden</string>
+    <string name="summary_smart">Der Akku lädt bis %1$d%%, danach läuft das Telefon über das Ladegerät. Das Laden setzt bei %2$d%% wieder ein.</string>
+    <string name="summary_bypass" formatted="false">Der Akku hört beim aktuellen Stand auf zu laden und das Telefon läuft direkt über das Ladegerät, zum Spielen oder Aufnehmen am Kabel. Braucht das Telefon mehr Leistung, als das Ladegerät liefert, lädt der Akku wieder nach, sobald er 3% tiefer ist.</string>
+    <string name="bypass_switch_title">Bypass-Laden verwenden</string>
+    <string name="category_bypass_mode">Bypass-Modus</string>
+    <string name="category_fast_charging">Schnellladen</string>
+    <string name="cool_title">Kühles Laden</string>
+    <string name="cool_summary">Drosselt das Schnellladen, sobald der Akku 40 °C übersteigt, damit er bei etwa 42 °C bleibt. Ist das Telefon warm, dauert das Laden etwas länger.</string>
+    <string name="limit_off_title">Volle Geschwindigkeit</string>
+    <string name="limit_off_summary">So schnell, wie Ladegerät und Telefontemperatur es zulassen</string>
+    <string name="limit_on_title">Leistung begrenzen</string>
+    <string name="limit_on_summary">Bis zu %1$d W in den Akku</string>
+    <string name="limit_not_supported">In diesem Build nicht verfügbar</string>
+    <string name="limit_watts_title">Maximale Leistung</string>
+    <string name="limit_failed">Schnellladegrenze konnte nicht geschrieben werden</string>
+    <string name="reading_title">Lädt gerade</string>
+    <string name="reading_idle">Akku wird nicht geladen</string>
+    <string name="hero_stat_battery">Akku</string>
+    <string name="hero_stat_mode">Modus</string>
+    <string name="hero_stat_usb">USB-Anschluss</string>
+    <string name="hero_stat_board">Platine</string>
+    <string name="hero_charging_title">Lädt mit %1$.1f W</string>
+    <string name="footer">Bypass schaltet sich nach einem Neustart aus. Solange er aktiv ist, wird der Akku nicht geladen und das Ladegerät versorgt das Telefon mit voller Eingangsleistung; Einstellungen &gt; Akku &gt; Ladesteuerung wird nicht genutzt.\n\nDie Leistungsgrenze bleibt nach einem Neustart aktiv. Sie begrenzt die Leistung, die in den Akku fließt, das Ladegerät selbst zieht also etwas mehr. Der Überhitzungsschutz kann das Laden trotzdem weiter verlangsamen.\n\nKühles Laden senkt den Strom ab 40 °C stufenweise (10 A, dann 7 A bei 41 °C, 4.5 A bei 42 °C und 2.5 A ab 43 °C) und hebt die Grenze wieder an, wenn der Akku abkühlt.</string>
+</resources>
